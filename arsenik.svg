@@ -17,13 +17,13 @@
       fill: none;
     }
     text {
-      fill: #444;
+      fill: #666;
       font: normal 20px sans-serif;
       text-align: center;
       text-anchor: middle;
     }
     use {
-      stroke: #444;
+      stroke: #666;
     }
 
     .specialKey text,
@@ -40,6 +40,8 @@
 
     text.hrm,
     text.mod  { fill: #333; }
+    rect.hrm,
+    use.hrm { stroke: #333; }
     text.sym  { fill: #66f; }
     use.sym { stroke: #66f; }
     text.nav  { fill: #e83; }
@@ -52,15 +54,17 @@
     .level1, .level2 { opacity: 0.8; }
 
     @media (prefers-color-scheme: dark) {
-      rect             { fill: #333; }
-      text             { fill: #bbb; }
-      use, rect.hrm  { stroke: #bbb; }
+      rect          { fill: #333; }
+      text          { fill: #bbb; }
+      use         { stroke: #bbb; }
+      use.hrm,
+      rect.hrm    { stroke: #eee; }
       text.hrm,
-      text.mod         { fill: #eee; }
-      text.sym         { fill: #99f; }
-      use.sym        { stroke: #99f; }
-      .sym rect.mod    { fill: #77d; }
-      .mod rect.mod    { fill: #666; }
+      text.mod      { fill: #eee; }
+      text.sym      { fill: #99f; }
+      use.sym     { stroke: #99f; }
+      .sym rect.mod { fill: #77d; }
+      .mod rect.mod { fill: #666; }
     }
 
     .left  { transform: translateX(  4px); }
@@ -109,6 +113,9 @@
     <path class="glyph" id="glyph_next"      d="M24,6A18,18,0,1,1,24,42A18,18,0,1,1,24,6 M22,16l8,8l-8,8"/>
     <path class="glyph" id="glyph_shift"     d="M23,7l14,20h-7v16h-14v-16h-7l14,-20"/>
     <path class="glyph" id="glyph_caps"      d="M24,7l14,20h-7v6h-14v-6h-7l14,-20 M31,38v5h-14v-5z"/>
+    <path class="glyph" id="glyph_command"   d="M20,16v16A4,4,0,1,1,16,28h16A4,4,0,1,1,28,32v-16A4,4,0,1,1,32,20h-16A4,4,0,1,1,20,16"/>
+    <path class="glyph" id="glyph_option"    d="M10,12h8l12,24h8 M28,12h10"/>
+    <path class="glyph" id="glyph_control"   d="M16,24l8-8l8,8"/>
   </defs>
 
 
@@ -149,10 +156,10 @@
         <rect width="52" height="52" rx="5" ry="5"/>
         <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
         <text x="12.8" y="20.6" class="level2">S</text>
-        <text x="12.8" y="43.4" class="hrm">⌥</text>
         <text x="38.0" y="20.6" class="sym">(</text>
         <text x="38.0" y="43.4" class="nav func">F6</text>
         <use  x="38.0" y="43.4" class="nav" href="#glyph_left"/>
+        <use  x="12.8" y="43.4" class="hrm" href="#glyph_option"/>
       </g>
       <g class="row_3">
         <rect width="52" height="52" rx="5" ry="5"/>
@@ -175,10 +182,10 @@
         <rect width="52" height="52" rx="5" ry="5"/>
         <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
         <text x="12.8" y="20.6" class="level2">D</text>
-        <text x="12.8" y="43.4" class="hrm">⌘</text>
         <text x="38.0" y="20.6" class="sym">)</text>
         <text x="38.0" y="43.4" class="nav func">F7</text>
         <use  x="38.0" y="43.4" class="nav" href="#glyph_down"/>
+        <use  x="12.8" y="43.4" class="hrm" href="#glyph_command"/>
       </g>
       <g class="row_3">
         <rect width="52" height="52" rx="5" ry="5"/>
@@ -201,10 +208,10 @@
         <rect width="52" height="52" rx="5" ry="5"/>
         <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
         <text x="12.8" y="20.6" class="level2">F</text>
-        <text x="12.8" y="43.4" class="hrm">⌃</text>
         <text x="38.0" y="20.6" class="sym">}</text>
         <text x="38.0" y="43.4" class="nav func">F8</text>
         <use  x="38.0" y="43.4" class="nav" href="#glyph_right"/>
+        <use  x="12.8" y="43.4" class="hrm" href="#glyph_control"/>
       </g>
       <g class="row_3">
         <rect width="52" height="52" rx="5" ry="5"/>
@@ -269,8 +276,8 @@
       <g class="row_2">
         <rect width="52" height="52" rx="5" ry="5"/>
         <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
+        <use  x="12.8" y="43.4" class="hrm" href="#glyph_control"/>
         <text x="12.8" y="20.6" class="level2">J</text>
-        <text x="12.8" y="43.4" class="hrm">⌃</text>
         <text x="38.0" y="20.6" class="sym">+</text>
         <text x="38.0" y="43.4" class="nav">4</text>
       </g>
@@ -292,8 +299,8 @@
       <g class="row_2">
         <rect width="52" height="52" rx="5" ry="5"/>
         <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
+        <use  x="12.8" y="43.4" class="hrm" href="#glyph_command"/>
         <text x="12.8" y="20.6" class="level2">K</text>
-        <text x="12.8" y="43.4" class="hrm">⌘</text>
         <text x="38.0" y="20.6" class="sym">-</text>
         <text x="38.0" y="43.4" class="nav">5</text>
       </g>
@@ -316,8 +323,8 @@
       <g class="row_2">
         <rect width="52" height="52" rx="5" ry="5"/>
         <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
+        <use  x="12.8" y="43.4" class="hrm" href="#glyph_option"/>
         <text x="12.8" y="20.6" class="level2">L</text>
-        <text x="12.8" y="43.4" class="hrm">⌥</text>
         <text x="38.0" y="20.6" class="sym">/</text>
         <text x="38.0" y="43.4" class="nav">6</text>
       </g>
