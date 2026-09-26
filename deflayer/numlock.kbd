@@ -1,0 +1,16 @@
+;; NumLock layer = `NumNav` without function keys or layer-taps.
+
+(deflayer numlock
+  _    _    _    _    _     _   _    _    _    _    _    _    _
+  tab  home up   end  pgup      @/   @7   @8   @9   @std
+  @all lft  down rght pgdn      @-   @4   @5   @6   @0
+  @ndo @cut @cpy @pst S-tab _   @,   @1   @2   @3   @.
+           sft             spc           @std
+)
+
+(defalias
+  std (layer-switch base)
+  lck (layer-switch numlock)
+)
+
+;; vim: set ft=lisp:
