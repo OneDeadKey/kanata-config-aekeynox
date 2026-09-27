@@ -1,0 +1,15 @@
+;; Import standard ISO defsrc
+(include ../../defsrc/settings.kbd)
+(include ../../defsrc/iso.kbd)
+(include ../../defsrc/layout.kbd)
+
+;; EZ + AltGr + Vim
+(include ../../deflayer/base.kbd)
+(include ../../deflayer/symbols_altgr.kbd)
+(include ../../deflayer/navigation_vim.kbd)
+
+;; fn/media (always on) + Qwerty
+(include ../../deflayer/funmedia.kbd)
+(include ../../defalias/qwerty.kbd)
+
+;; vim: set ft=lisp:

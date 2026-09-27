@@ -1,0 +1,59 @@
+name: Tests
+on: [pull_request, workflow_dispatch]
+jobs:
+  collect-tests:
+    outputs:
+      test-files: ${{ steps.test-files.outputs.test-files }}
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Find test files
+        id: test-files
+        run: |
+          cd tests
+          export TESTS=$(ls */* | jq -R -s -c 'split("\n")[:-1]')
+          echo "test-files=${TESTS}" >> $GITHUB_OUTPUT
+  tests:
+    needs: collect-tests
+    strategy:
+      fail-fast: false
+      matrix:
+        test: ${{ fromJSON(needs.collect-tests.outputs.test-files) }}
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: install-kanata
+        run: sudo apt-get update && sudo apt-get install -y kanata
+
+      - name: run tests
+        working-directory: tests
+        run: kanata --check --cfg ${{ matrix.test }}
+
+  tests-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: install-kanata
+        run: brew install kanata
+
+      - name: run tests
+        run: kanata --check --cfg kanata.kbd
+
+  # FIXME: Doesn’t work
+  #
+  # tests-windows:
+  #   runs-on: macos-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v7
+  #
+  #     - name: install-kanata
+  #       run: choco install kanata
+  #
+  #     - name: run tests
+  #       run: kanata --check --cfg kanata.kbd

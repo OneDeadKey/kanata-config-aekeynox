@@ -1,0 +1,12 @@
+;; Import default config
+(include ../../defsrc/settings.kbd)
+(include ../../defsrc/iso.kbd)
+(include ../../defsrc/layout.kbd)
+(include ../../deflayer/base.kbd)
+(include ../../deflayer/symbols.kbd)
+(include ../../deflayer/navigation.kbd)
+(include ../../deflayer/funmedia.kbd)
+
+(include ../../defalias/qwertz.kbd)
+
+;; vim: set ft=lisp:

@@ -1,0 +1,14 @@
+(include ../../defsrc/settings.kbd)
+
+;; ISO + anglemod
+(include ../../defsrc/iso.kbd)
+(include ../../defsrc/layout_anglemod.kbd)
+
+;; Import default layers + Qwerty
+(include ../../deflayer/base.kbd)
+(include ../../deflayer/symbols.kbd)
+(include ../../deflayer/navigation.kbd)
+(include ../../deflayer/funmedia.kbd)
+(include ../../defalias/qwerty.kbd)
+
+;; vim: set ft=lisp:

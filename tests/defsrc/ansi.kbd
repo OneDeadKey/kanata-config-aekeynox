@@ -1,0 +1,14 @@
+(include ../../defsrc/settings.kbd)
+
+;; Basic ANSI layout
+(include ../../defsrc/ansi.kbd)
+(include ../../defsrc/layout.kbd)
+
+;; Import default layers + Qwerty
+(include ../../deflayer/base.kbd)
+(include ../../deflayer/symbols.kbd)
+(include ../../deflayer/navigation.kbd)
+(include ../../deflayer/funmedia.kbd)
+(include ../../defalias/qwerty.kbd)
+
+;; vim: set ft=lisp:
