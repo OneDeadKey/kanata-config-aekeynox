@@ -8,4 +8,8 @@
             _              _              _
 )
 
+(defalias
+  sym _  ;; Unreachable but navigation layers needs it to be defined.
+)
+
 ;; vim: set ft=lisp:
