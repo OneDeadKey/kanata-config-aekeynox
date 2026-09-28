@@ -33,9 +33,9 @@
 ;; Angle-mods can be enabled here, i.e. ZXCVB can be shifted to the left.
 ;; More details here: https://colemakmods.github.io/ergonomic-mods/angle.html
 
-(include defsrc/layout.kbd)                ;; standard finger assignment
-;; (include defsrc/layout_anglemod.kbd)       ;; ZXCVB are shifted to the left
-;; (include defsrc/layout_wide_anglemod.kbd)  ;; angle-mod + right hand shifted by one key
+(include defsrc/layout.kbd)                   ;; standard finger assignment
+;; (include defsrc/layout_anglemod.kbd)          ;; ZXCVB are shifted to the left
+;; (include defsrc/layout_wide_anglemod.kbd)     ;; angle-mod + right hand shifted by one key
 
 
 ;;-----------------------------------------------------------------------------
