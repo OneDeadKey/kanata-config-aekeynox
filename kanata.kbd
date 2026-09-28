@@ -61,7 +61,7 @@
 ;; `Symbols` Layer
 ;;-----------------------------------------------------------------------------
 ;; Triggered by Sym (right thumb key).
-;;  - by default, the right thumb key brings s Symbols layer
+;;  - by default, brings a Symbols layer
 ;;  - with the `altgr` variant, the right thumb key becomes AltGr/Option
 
 (include deflayer/symbols.kbd)        ;; programming symbols
