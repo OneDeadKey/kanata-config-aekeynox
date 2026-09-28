@@ -33,8 +33,8 @@
 ;; Angle-mods can be enabled here, i.e. ZXCVB can be shifted to the left.
 ;; More details here: https://colemakmods.github.io/ergonomic-mods/angle.html
 
-(include defsrc/layout.kbd)                ;; standard finger assignment
-;; (include defsrc/layout_anglemod.kbd)       ;; ZXCVB are shifted to the left
+;; (include defsrc/layout.kbd)                ;; standard finger assignment
+(include defsrc/layout_anglemod.kbd)       ;; ZXCVB are shifted to the left
 ;; (include defsrc/layout_wide_anglemod.kbd)  ;; angle-mod + right hand shifted by one key
 
 
@@ -50,9 +50,9 @@
 ;;    - the left thumb key becomes Shift
 ;;    - SDF/JKL become Meta/Ctrl/Alt when held
 
-(include deflayer/base.kbd)            ;; standard keyboard behavior
-;; (include deflayer/base_lt.kbd)         ;; layer-taps on thumb keys
-;; (include deflayer/base_lt_hrm.kbd)     ;; layer-taps + homerow mods
+(include deflayer/base.kbd)         ;; standard keyboard behavior
+;; (include deflayer/base_lt.kbd)      ;; layer-taps on thumb keys
+;; (include deflayer/base_lt_hrm.kbd)  ;; layer-taps + homerow mods
 
 ;; Note: not enabling layer-taps here makes the rest of the file useless.
 
@@ -60,9 +60,10 @@
 ;;-----------------------------------------------------------------------------
 ;; `Symbols` Layer
 ;;-----------------------------------------------------------------------------
-;;  - by default, the right thumb key brings a `Symbols` layer
+;; Triggered by Sym (right thumb key).
+;;  - by default, the right thumb key brings s Symbols layer
 ;;  - with the `altgr` variant, the right thumb key becomes AltGr/Option
-;;  - holding right + left thumb keys brings a `Numbers` layer
+;;  - holding right thumb + left thumb brings a Numbers layer
 ;;    (= NumPad or NumRow, depending on the selected `Navigation` layer)
 
 (include deflayer/symbols.kbd)        ;; programming symbols
@@ -70,17 +71,35 @@
 
 
 ;;-----------------------------------------------------------------------------
-;; `Navigation` Layer: ESDF or HJKL?
+;; `NumLock` Layer
 ;;-----------------------------------------------------------------------------
+;; Triggered by Nav+Q (Vim variant only).
 
-(include deflayer/navigation.kbd)         ;; arrows on ESDF, NumPad under the right hand
-;; (include deflayer/navigation_vim.kbd)     ;; arrows on HJKL, NumRow on Sym+Shift
-;; (include deflayer/navigation_hybrid.kbd)  ;; arrows on ESDF, NumPad + NumRow
+(include deflayer/numlock.kbd)
+
+
+;;-----------------------------------------------------------------------------
+;; `Numbers` Layer
+;;-----------------------------------------------------------------------------
+;; Triggered by Sym+Shift.
+
+(include deflayer/numpad.kbd)  ;; right-hand numpad, like on the default Navigation layer
+;; (include deflayer/numrow.kbd)  ;; numbers on the home row, Shift+numbers on the top row
+
+
+;;-----------------------------------------------------------------------------
+;; `Navigation` Layer
+;;-----------------------------------------------------------------------------
+;; Triggered by a long press on the spacebar.
+
+(include deflayer/navigation.kbd)      ;; arrows on ESDF, NumPad under the right hand
+;; (include deflayer/navigation_vim.kbd)  ;; arrows on HJKL, advanced keys under the left hand
 
 
 ;;-----------------------------------------------------------------------------
 ;; `Fun/Media` Layer
 ;;-----------------------------------------------------------------------------
+;; Triggered by Nav+Sym.
 
 (include deflayer/funmedia.kbd)
 
@@ -97,6 +116,5 @@
 ;; (include defalias/lafayette.kbd)
 ;; (include defalias/ergol.kbd)
 ;; (include defalias/bepo.kbd)
-
 
 ;; vim: set ft=lisp:
