@@ -50,9 +50,9 @@
 ;;    - the left thumb key becomes Shift
 ;;    - SDF/JKL become Meta/Ctrl/Alt when held
 
-(include deflayer/base.kbd)         ;; standard keyboard behavior
-;; (include deflayer/base_lt.kbd)      ;; layer-taps on thumb keys
-;; (include deflayer/base_lt_hrm.kbd)  ;; layer-taps + homerow mods
+(include deflayer/base.kbd)            ;; standard keyboard behavior
+;; (include deflayer/base_lt.kbd)         ;; layer-taps on thumb keys
+;; (include deflayer/base_lt_hrm.kbd)     ;; layer-taps + homerow mods
 
 ;; Note: not enabling layer-taps here makes the rest of the file useless.
 
