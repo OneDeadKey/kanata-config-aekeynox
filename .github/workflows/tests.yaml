@@ -54,4 +54,4 @@ jobs:
         run: choco install kanata
 
       - name: run tests
-        run: C:\ProgramData\chocolatey\lib\kanata --check --cfg kanata.kbd
+        run: C:\ProgramData\chocolatey\lib\kanata.exe --check --cfg kanata.kbd
