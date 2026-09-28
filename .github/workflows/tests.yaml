@@ -50,8 +50,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: install-kanata
-        run: choco install kanata
+      - name: fetch kanata
+        run: wget https://github.com/jtroo/kanata/releases/download/v1.12.0/windows-binaries-x64.zip
+
+      - name: unzip kanata
+        run: unzip windows-binaries-x64.zip
 
       - name: run tests
-        run: C:\\ProgramData\\chocolatey\\lib\\kanata.exe --check --cfg kanata.kbd
+        run: kanata_windows_tty_winIOv2_x64.exe --check --cfg kanata.kbd
