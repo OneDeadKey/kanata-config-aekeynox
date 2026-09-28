@@ -30,7 +30,7 @@
 )
 
 (platform (macos) (defalias
-  prtsc G-C-3
+  prtsc M-C-S-3
 ))
 (platform (linux win winiov2 wintercept) (defalias
   prtsc prtsc
