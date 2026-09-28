@@ -68,13 +68,13 @@ jobs:
           - https://github.com/jtroo/kanata/releases/download/v1.8.0/kanata
           - https://github.com/jtroo/kanata/releases/download/v1.5.0/kanata
           - https://github.com/jtroo/kanata/releases/download/v1.2.0/kanata
-      steps:
-      - name: Checkout
-        uses: actions/checkout@v7
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v7
 
-      - name: install-kanata
-        run: wget ${{ matrirx.kanata-release-link }} && chmod u+x kanata
+    - name: install-kanata
+      run: wget ${{ matrirx.kanata-release-link }} && chmod u+x kanata
 
-      - name: run tests
-        working-directory: tests
-        run: ./kanata --check --cfg ${{ matrix.test }}
+    - name: run tests
+      working-directory: tests
+      run: ./kanata --check --cfg ${{ matrix.test }}
