@@ -44,16 +44,14 @@ jobs:
       - name: run tests
         run: kanata --check --cfg kanata.kbd
 
-  # FIXME: Doesn’t work
-  #
-  # tests-windows:
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v7
-  #
-  #     - name: install-kanata
-  #       run: choco install kanata
-  #
-  #     - name: run tests
-  #       run: kanata --check --cfg kanata.kbd
+  tests-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: install-kanata
+        run: choco install kanata
+
+      - name: run tests
+        run: kanata --check --cfg kanata.kbd
