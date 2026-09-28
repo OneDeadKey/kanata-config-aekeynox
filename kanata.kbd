@@ -63,8 +63,6 @@
 ;; Triggered by Sym (right thumb key).
 ;;  - by default, the right thumb key brings s Symbols layer
 ;;  - with the `altgr` variant, the right thumb key becomes AltGr/Option
-;;  - holding right thumb + left thumb brings a Numbers layer
-;;    (= NumPad or NumRow, depending on the selected `Navigation` layer)
 
 (include deflayer/symbols.kbd)        ;; programming symbols
 ;; (include deflayer/symbols_altgr.kbd)  ;; AltGr/Option layer
