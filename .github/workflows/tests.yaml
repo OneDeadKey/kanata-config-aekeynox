@@ -73,7 +73,7 @@ jobs:
       uses: actions/checkout@v7
 
     - name: install-kanata
-      run: wget ${{ matrirx.kanata-release-link }} && chmod u+x kanata
+      run: wget ${{ matrix.kanata-release-link }} && chmod u+x kanata
 
     - name: run tests
       working-directory: tests
