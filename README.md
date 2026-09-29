@@ -1,16 +1,10 @@
-kanata-config-arsenik
+Ækeynox-kanata
 ================================================================================
 
 Reference [Kanata] implementation of the [Arsenik] keymap.
 
 [Kanata]:  https://github.com/jtroo/kanata
 [Arsenik]: https://github.com/OneDeadKey/arsenik
-
-<!--  No release yet. Propose a zip archive instead.
-[dl-arsenik]: https://github.com/OneDeadKey/arsenik/releases
-  -->
-[dl-arsenik]: https://github.com/OneDeadKey/kanata-config-arsenik/archive/refs/heads/main.zip
-[dl-kanata]:  https://github.com/jtroo/kanata/releases
 
 
 In a Nutshell
@@ -23,19 +17,23 @@ In a Nutshell
 - this repository provides Kanata configuration files to activate Arsenik on
   your PC or Mac
 
-![base, navigation and sym layers on a 33-key keyboard](arsenik.svg)
+![base, navigation and sym layers on a 33-key keyboard](img/arsenik.svg)
+
+<!--  No release yet. Propose a zip archive instead. -->
+[dl-aekeynox]: https://github.com/OneDeadKey/kanata-config-aekeynox/archive/refs/heads/main.zip
+[dl-kanata]:   https://github.com/jtroo/kanata/releases
 
 
 Usage
 --------------------------------------------------------------------------------
 
-- Get Arsenik:
-  - check out this repository with Git or [download it][dl-arsenik]
-  - **configure `kanata.kbd`**: by default, Arsenik does nothing,
+- Get Ækeynox:
+  - check out this repository with Git or [download it][dl-aekeynox]
+  - **configure `kanata.kbd`**: by default, Ækeynox does nothing,
     all features have to be enabled on an opt-in basis.
 - Get Kanata:
   - download a [pre-built executable][dl-kanata]
-  - unzip it into the Arsenik folder
+  - unzip it into the Ækeynox folder
 - Run Kanata.
 
 > [!TIP]
@@ -53,7 +51,7 @@ See OS-specific instructions below.
 ### Windows
 
 There are several Kanata variants for Windows. We recommend using
-`kanata_windows_gui_winIOv2_[arch].exe`: put it in the Arsenik folder, start it
+`kanata_windows_gui_winIOv2_[arch].exe`: put it in the Ækeynox folder, start it
 (double-click), and Kanata will run in the background. It can be reloaded or
 exited with a right-click on its systray icon.
 
@@ -237,3 +235,12 @@ In the system settings, look for the *“Login Items”* menu and select the `su
 service in the *“Allow in the Background”* list.
 Reload Kanata’s configuration by disabling and re-enabling this service.
 </details>
+
+
+Why the name?
+--------------------------------------------------------------------------------
+
+Any name containing `key` and easy to search would’ve been a good fit,
+but here’s Nox:
+
+![My name is Nox and I approve this project.](img/nox.jpg)
