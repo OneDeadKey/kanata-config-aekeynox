@@ -6,6 +6,7 @@
 ;; HRM + AltGr + Emacs
 (include ../../deflayer/base_lt_hrm.kbd)
 (include ../../deflayer/symbols_altgr.kbd)
+(include ../../deflayer/numlock.kbd)
 (include ../../deflayer/numpad.kbd)
 (include ../../deflayer/navigation.kbd)
 

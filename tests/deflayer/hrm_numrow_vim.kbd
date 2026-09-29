@@ -6,6 +6,7 @@
 ;; HRM + symbols + Vim + numrow
 (include ../../deflayer/base_lt_hrm.kbd)
 (include ../../deflayer/symbols.kbd)
+(include ../../deflayer/numlock.kbd)
 (include ../../deflayer/numrow.kbd)
 (include ../../deflayer/navigation_vim.kbd)
 

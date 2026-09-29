@@ -6,6 +6,7 @@
 ;; EZ + symbols + Vim
 (include ../../deflayer/base.kbd)
 (include ../../deflayer/symbols.kbd)
+(include ../../deflayer/numlock.kbd)
 (include ../../deflayer/numpad.kbd)
 (include ../../deflayer/navigation_vim.kbd)
 

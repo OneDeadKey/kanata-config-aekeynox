@@ -6,6 +6,7 @@
 ;; LT + symbols + Emacs
 (include ../../deflayer/base_lt.kbd)
 (include ../../deflayer/symbols.kbd)
+(include ../../deflayer/numlock.kbd)
 (include ../../deflayer/numpad.kbd)
 (include ../../deflayer/navigation.kbd)
 
