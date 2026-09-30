@@ -140,7 +140,7 @@
         <text x="12.8" y="20.6" class="level2">Z</text>
         <text x="38.0" y="20.6" class="sym">~</text>
         <text x="38.0" y="43.4" class="nav func">F9</text>
-        <text x="38.0" y="43.4" class="nav shortcut">cut</text>
+        <text x="38.0" y="43.4" class="nav shortcut">undo</text>
       </g>
     </g>
 
