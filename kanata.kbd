@@ -11,9 +11,13 @@
 ;; General settings
 (include defsrc/settings.kbd)
 
-;; Every section below should enable one and only one `include` statement.
-;; Enable each feature by un-commenting the related line
-;; (a commented line starts with ;;).
+
+;;============================================================================
+;; Every section below should enable ONE and only one `include` statement
+;;============================================================================
+;;  - do not delete or reorder existing sections
+;;  - enable each feature by un-commenting the related line
+;;    (a commented line starts with ;;)
 
 
 ;;-----------------------------------------------------------------------------

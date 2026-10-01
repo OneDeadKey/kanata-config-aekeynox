@@ -29,21 +29,12 @@ Usage
 
 - Get Ækeynox:
   - check out this repository with Git or [download it][dl-aekeynox]
-  - **configure `kanata.kbd`**: by default, Ækeynox does nothing,
-    all features have to be enabled on an opt-in basis.
+  - [configure `kanata.kbd`](#configuration): Ækeynox-kanata does nothing by
+    default, every feature must be enabled on an opt-in basis.
 - Get Kanata:
   - download a [pre-built executable][dl-kanata]
   - unzip it into the Ækeynox folder
 - Run Kanata.
-
-> [!TIP]
-> All `*custom*.kbd` files are git-ignored. Git users probably want to put
-> their configuration in a `/custom.kbd` file, and pass it as an argument to
-> Kanata:
-
-```sh
-./kanata --cfg custom.kbd
-```
 
 See OS-specific instructions below.
 
@@ -235,6 +226,31 @@ In the system settings, look for the *“Login Items”* menu and select the `su
 service in the *“Allow in the Background”* list.
 Reload Kanata’s configuration by disabling and re-enabling this service.
 </details>
+
+
+Configuration
+--------------------------------------------------------------------------------
+
+Ækeynox-kanata is designed to ease your progression with mod-taps and layers.
+Therefore, it does nothing by default; every feature must be enabled one by one.
+
+The main `kanata.kbd` file should be enough for most users. All features are
+(quickly) documented, just make sure that:
+- existing sections are neither deleted nor reordered;
+- each section has **one** and only one `(include)` statement.
+
+Included `.kbd` files should be easy to customize if needed. Ækeynox-kanata is
+proposed as a configurable keymap, but it’s easy to use it as a kickstarter if
+you don’t want to follow the Arsenik spec.
+
+> [!TIP]
+> All `*custom*.kbd` files are git-ignored. Git users probably want to put
+> their configuration in a `/custom.kbd` file, and pass it as an argument to
+> Kanata:
+
+```sh
+./kanata --cfg custom.kbd
+```
 
 
 Why the name?
