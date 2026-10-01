@@ -1,9 +1,9 @@
 ;; Base layer: layer-taps under the thumbs + home-row mods on SDF and JKL
 
 (deflayer base
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  q    w    e    r    t         y    u    i    o    p
-  a    @ss  @dd  @ff  g         h    @jj  @kk  @ll  ;
+  1    2    3    4    5   bspc  6    7    8    9    0    -    =
+  q    w    e    r    t         y    u    i    o    p    [    ]
+  a    @ss  @dd  @ff  g         h    @jj  @kk  @ll  ;    '
   z    x    c    v    b   lbot  n    m    ,    .    /
             @sft          @nav            @sym
 )

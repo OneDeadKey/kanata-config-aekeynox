@@ -4,8 +4,8 @@
 
 (deflayer funmedia
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  f1   f2   f3   f4   XX        XX   prev @v+  @b+  XX
-  f5   f6   f7   f8   XX        XX   @t0  @v0  @b0  @prtsc
+  f1   f2   f3   f4   XX        XX   prev @v+  @b+  XX   _    _
+  f5   f6   f7   f8   XX        XX   @t0  @v0  @b0  @prtsc    _
   f9   f10  f11  f12  XX   XX   XX   next @v-  @b-  XX
             _              _              _
 )
@@ -26,7 +26,7 @@
   ;; Homerow mods are always enabled in this layer
   t0 (tap-hold $QUICK_TAP $TAPPING_TERM pp   $HM1)
   v0 (tap-hold $QUICK_TAP $TAPPING_TERM mute $HM2)
-  b0 $HM3
+  b0 $HM3 ;; XXX: need a key to sleep / shut off the screen
 )
 
 (platform (macos) (defalias

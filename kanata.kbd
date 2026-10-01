@@ -91,20 +91,20 @@
 
 
 ;;-----------------------------------------------------------------------------
+;; `Fun/Media` Layer
+;;-----------------------------------------------------------------------------
+;; Triggered by Nav+Sym.
+
+(include deflayer/funmedia.kbd)
+
+
+;;-----------------------------------------------------------------------------
 ;; `Navigation` Layer
 ;;-----------------------------------------------------------------------------
 ;; Triggered by a long press on the spacebar.
 
 (include deflayer/navigation.kbd)      ;; arrows on ESDF, NumPad under the right hand
 ;; (include deflayer/navigation_vim.kbd)  ;; arrows on HJKL, advanced keys under the left hand
-
-
-;;-----------------------------------------------------------------------------
-;; `Fun/Media` Layer
-;;-----------------------------------------------------------------------------
-;; Triggered by Nav+Sym.
-
-(include deflayer/funmedia.kbd)
 
 
 ;;-----------------------------------------------------------------------------

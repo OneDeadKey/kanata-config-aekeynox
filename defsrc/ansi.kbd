@@ -1,32 +1,60 @@
 ;; Platform-specific Keys (ANSI)
-;; lbot = bottom-left key = LeftShift = angle-mod substitution key
+;; ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━━┓
+;; │ ~   │ !   │ @   │ #   │ $   │ %   │ ^   │ &   │ *   │ (   │ )   │ _   │ +   ┃          ┃
+;; │ `   │ 1   │ 2   │ 3   │ 4   │ 5   │ 6   │ 7   │ 8   │ 9   │ 0   │ -   │ =   ┃ ⌫        ┃
+;; ┢━━━━━┷━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┺━━┯━━━━━━━┩
+;; ┃        ┃ Q   │ W   │ E   │ R   │ T   │ Y   │ U   │ I   │ O   │ P   │ {   │ }   │ RTOP  │
+;; ┃ ↹      ┃     │     │     │     │     │     │     │     │     │     │ [   │ ]   │ \     │
+;; ┣━━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┲━━━━┷━━━━━━━┪
+;; ┃         ┃ A   │ S   │ D   │ F   │ G   │ H   │ J   │ K   │ L   │ :   │ "   ┃ RMID       ┃
+;; ┃ ⇬       ┃     │     │     │     │     │     │     │     │     │ ;   │ '   ┃ ⏎          ┃
+;; ┣━━━━━━━━━┻━━┱──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┲━━┻━━━━━━━━━━━━┫
+;; ┃ LBOT       ┃ Z   │ X   │ C   │ V   │ B   │ N   │ M   │ <   │ >   │ ?   ┃               ┃
+;; ┃ ⇧          ┃     │     │     │     │     │     │     │ ,   │ .   │ /   ┃ ⇧             ┃
+;; ┣━━━━━━━┳━━━━┻━━┳━━┷━━━━┱┴─────┴─────┴─────┴─────┴─────┴─┲━━━┷━━━┳━┷━━━━━╋━━━━━━━┳━━━━━━━┫
+;; ┃       ┃       ┃ LTHMB ┃                                ┃ RTHMB ┃       ┃       ┃       ┃
+;; ┃ Ctrl  ┃ Meta  ┃ Alt   ┃ ␣                              ┃ Alt   ┃ Meta  ┃ menu  ┃ Ctrl  ┃
+;; ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+;; lbot =  bottom-left key = LeftShift = angle-mod substitution key
+;; rmid = middle-right key =     Enter =  wide-mod substitution key
+;; rtop =    top-right key = Backslash =  wide-mod substitution key
 
 (platform (linux) (deflocalkeys-linux
   LeftThumb   56 ;; LeftAlt
   RightThumb 100 ;; RightAlt
   lbot        42
+  rmid        28
+  rtop        43
 ))
 
 (platform (macos) (deflocalkeys-macos
   LeftThumb  125 ;; LeftCommand
   RightThumb 126 ;; RightCommand
   lbot        42
+  rmid        28
+  rtop        43
 ))
 
 (platform (win) (deflocalkeys-win
   LeftThumb  164 ;; LeftAlt
   RightThumb 165 ;; RightAlt
   lbot       160
+  rmid        13
+  rtop       220
 ))
 (platform (winiov2) (deflocalkeys-winiov2
   LeftThumb  164 ;; LeftAlt
   RightThumb 165 ;; RightAlt
   lbot       160
+  rmid        13
+  rtop       220
 ))
 (platform (wintercept) (deflocalkeys-wintercept ;; XXX: untested
   LeftThumb  164 ;; LeftAlt
   RightThumb 165 ;; RightAlt
   lbot       160
+  rmid        13
+  rtop       220
 ))
 
 ;; vim: set ft=lisp:
