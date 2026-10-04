@@ -1,9 +1,10 @@
 ;; NumLock layer = `NumNav` without function keys or layer-taps.
 
 (deflayer numlock
+  _
   _    _    _    _    _     _   _    _    _    _    _    _    _
-  tab  home up   end  pgup      @/   @7   @8   @9   @std _    _
-  @all lft  down rght pgdn      @-   @4   @5   @6   @0   _
+  tab  home up   end  pgup  XX  @/   @7   @8   @9   @std _    _
+  @all lft  down rght pgdn  XX  @-   @4   @5   @6   @0   _
   @ndo @cut @cpy @pst S-tab _   @,   @1   @2   @3   @.
            sft             spc           @std
 )

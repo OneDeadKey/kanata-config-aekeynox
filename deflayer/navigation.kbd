@@ -7,11 +7,12 @@
 ;; except for linux-dev, i.e. you cannot live reload and switch keyboard devices.
 
 (deflayer navigation
-  f1   f2   f3   f4   f5  lrld  f6   f7   f8   f9   f10  f11  f12
-  tab  home up   end  pgup      @/   @7   @8   @9   @lck @b-  @b+
-  @all lft  down rght pgdn      @-   @4   @5   @6   @0   _
-  @ndo @cut @cpy @pst S-tab _   @,   @1   @2   @3   @.
-            del             _             @fun
+  lrld
+  f1   f2   f3   f4   f5     @v+    f6   f7   f8   f9   f10  f11  f12
+  tab  home up   end  pgup   @v-    @/   @7   @8   @9   @lck @b-  @b+
+  @all lft  down rght pgdn   @v0    @-   @4   @5   @6   @0   _
+  @ndo @cut @cpy @pst S-tab   _     @,   @1   @2   @3   @.
+            del               _               @fun
 )
 
 ;; vim: set ft=lisp:
