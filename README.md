@@ -254,7 +254,7 @@ you don’t want to follow the Arsenik spec.
 
 > [!TIP]
 > when layer-taps are activated, the whole configuration can be live-reloaded
-> with <kbd>Space</kbd>+<kbd>`</kbd> (= backtick, the key left to <kbd>1</kbd>).
+> with <kbd>Space</kbd>+<kbd>Esc</kbd>.
 
 
 Why the name?
