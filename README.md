@@ -252,6 +252,10 @@ you don’t want to follow the Arsenik spec.
 ./kanata --cfg custom.kbd
 ```
 
+> [!TIP]
+> when layer-taps are activated, the whole configuration can be live-reloaded
+> with <kbd>Space</kbd>+<kbd>`</kbd> (= backtick, the key left to <kbd>1</kbd>).
+
 
 Why the name?
 --------------------------------------------------------------------------------

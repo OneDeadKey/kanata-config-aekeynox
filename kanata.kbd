@@ -6,7 +6,7 @@
 ;;==========================================================================;;
 
 ;; Note: if layer-taps are enabled (see the "Base layer" section below),
-;; this configuration can be live-reloaded with Space+Backspace.
+;; this configuration can be live-reloaded with Space+Backtick (`).
 
 ;; General settings
 (include defsrc/settings.kbd)
