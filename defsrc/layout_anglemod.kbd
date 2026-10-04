@@ -39,8 +39,8 @@
 (defsrc
   `
   1    2    3    4    5   bspc   6    7    8    9    0    -    =
-  q    w    e    r    t   rtop   y    u    i    o    p    [    ]
-  a    s    d    f    g   rmid   h    j    k    l    ;    '
+  q    w    e    r    t   ret    y    u    i    o    p    [    ]
+  a    s    d    f    g    \     h    j    k    l    ;    '
   lbot z    x    c    v    b     n    m    ,    .    /
         LeftThumb         spc         RightThumb
 )

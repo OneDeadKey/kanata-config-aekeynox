@@ -3,8 +3,8 @@
 (deflayer base
   `
   1    2    3    4    5   bspc  6    7    8    9    0    -    =
-  q    w    e    r    t   rtop  y    u    i    o    p    [    ]
-  a    @ss  @dd  @ff  g   rmid  h    @jj  @kk  @ll  ;    '
+  q    w    e    r    t   ret   y    u    i    o    p    [    ]
+  a    @ss  @dd  @ff  g    \    h    @jj  @kk  @ll  ;    '
   z    x    c    v    b   lbot  n    m    ,    .    /
             @sft          @nav            @sym
 )
