@@ -27,8 +27,8 @@
 ;; ISO (a.k.a. 102/105 keys) or ANSI (a.k.a. 101/104 keys).
 ;; If the key next to the left Shift is `Z`, your keyboard is ANSI.
 
-(include defsrc/iso.kbd)
-;; (include defsrc/ansi.kbd)
+(include defsrc/ansi.kbd)
+;; (include defsrc/iso.kbd)
 
 
 ;;-----------------------------------------------------------------------------
