@@ -265,6 +265,7 @@ Therefore, it does nothing by default; every feature must be enabled one by one.
 
 The main `kanata.kbd` file should be enough for most users. All features are
 (quickly) documented, just make sure that:
+
 - existing sections are neither deleted nor reordered;
 - each section has **one** and only one `(include)` statement.
 
@@ -282,7 +283,7 @@ you don’t want to follow the Arsenik spec.
 ```
 
 > [!TIP]
-> when layer-taps are activated, the whole configuration can be live-reloaded
+> When layer-taps are activated, the whole configuration can be live-reloaded
 > with <kbd>Space</kbd>+<kbd>Esc</kbd>.
 
 <details>
@@ -324,6 +325,82 @@ More information in Kanata’s user guide:
 [macos-dev-names-include](https://jtroo.github.io/config.html#macos-only-macos-dev-names-include).
 
 </details>
+
+
+Keyboard Layout
+--------------------------------------------------------------------------------
+
+The `Symbols` layer, as well as the keyboard shortcuts in the `Navigation`
+layer, depend on the keyboard layout: QWERTY, AZERTY, QWERTZ… This keyboard
+layout must be selected accordingly in the last configuration section.
+
+### ASCII Layouts: QWERTY-US, Dvorak, Colemak…
+
+These layouts work fine out of the box: just make sure the default `Symbols`
+layer is included.
+
+```lisp
+(include deflayer/symbols.kbd) ;; programming symbols
+```
+
+Adding support for another layout should be straight-forward, mostly by copying
+and pasting the `defalias/qwerty.kbd` file. Pull requests are welcome.
+
+### Non-ASCII Layouts: AZERTY, QWERTZ, Ergo‑L…
+
+These layouts can be trickier, as they rely on an <kbd>AltGr</kbd> key for some
+of their common symbols. In some cases, you might want to ditch the `Symbols`
+layer and keep <kbd>AltGr</kbd> under the right thumb.
+
+- Most European layouts (AZERTY, QWERTZ, non-US QWERTY variants) use
+  <kbd>AltGr</kbd> mostly for programming symbols and the `€` sign.
+  Arsenik-kanata sets `€` on <kbd>Sym</kbd>+<kbd>'</kbd> or
+  <kbd>Nav</kbd>+<kbd>'</kbd> (= the key next to the pinky in the home row), so
+  you can keep the `Symbols` layer.
+
+- Some ergonomic layouts such as Ergo‑L or QWERTY-Lafayette already have the
+  Arsenik `Symbols` layer with <kbd>AltGr</kbd>. On these layouts, both
+  `symbols.kbd` and `symbols_altgr.kbd` work; by choosing the latter, you’ll
+  keep special chars with <kbd>Shift</kbd>+<kbd>AltGr</kbd>, but some keyboard
+  shortcuts like <kbd>Ctrl</kbd><kbd>+</kbd> might not work within the `Symbols`
+  layer.
+
+- Some alternative layouts like Bépo require <kbd>AltGr</kbd> for common
+  letters. In such a case, you probably want to drop the `Symbols` layer, and
+  keep <kbd>AltGr</kbd> instead.
+
+```lisp
+(include deflayer/symbols_altgr.kbd) ;; AltGr/Option layer
+```
+
+Adding support for non-ASCII layouts can be tricky, as the position of every
+symbol can be very specific to a layout *and an operating system*. Open a pull
+request, and we’ll assist you to add your layout.
+
+
+Troubleshooting
+--------------------------------------------------------------------------------
+
+Some combinations of three keys might not work on a standard keyboard, due to
+[ghosting], which is a hardware problem that Kanata cannot fix.
+
+Here’s a common example on ThinkPad, with the `NumRow` layer:
+
+- press <kbd>Sym</kbd>
+- press <kbd>Shift</kbd> (=> brings the `NumRow` layer)
+- tap <kbd>G</kbd>
+
+Expected result: types a `5`.<br>
+Actual result: nothing happens.
+
+The workaround consists in releasing a key:
+
+- press <kbd>Sym</kbd>
+- press <kbd>Shift</kbd> (=> brings the `NumRow` layer)
+- *release <kbd>Sym</kbd>* (=> `NumRow` is still active)
+- tap <kbd>G</kbd>
+
+[ghosting]: https://en.wikipedia.org/wiki/Key_rollover#Ghosting
 
 
 Why the name?
