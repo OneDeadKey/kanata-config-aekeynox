@@ -1,8 +1,16 @@
 (defcfg
+
   ;; Allow Kanata to process keys that are not defined in defsrc
   process-unmapped-keys yes
-  ;; Fixes the AltGr/Symbols on Windows (see Arsenik issue #22)
+
+  ;; Fixes the AltGr/Symbols layer on Windows
+  ;; https://github.com/OneDeadKey/arsenik/issues/22
   windows-altgr cancel-lctl-press
+
+  ;; Works around a regression introduced by Kanata-winIOv2 0.12.0,
+  ;; but requires Kanata 0.12.1 or newer.
+  ;; https://github.com/jtroo/kanata/issues/2115
+  ;; windows-sync-keystates none
 )
 
 ;; Timing variables for tap-hold effects.
