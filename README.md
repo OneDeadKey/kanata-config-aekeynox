@@ -19,18 +19,21 @@ In a Nutshell
 
 ![base, navigation and sym layers on a 33-key keyboard](img/arsenik.svg)
 
-<!--  No release yet. Propose a zip archive instead. -->
-[dl-aekeynox]: https://github.com/OneDeadKey/kanata-config-aekeynox/archive/refs/heads/main.zip
-[dl-kanata]:   https://github.com/jtroo/kanata/releases
+<!-- skip the latest Kanata release (1.12.0)
+[dl-kanata]:   https://github.com/jtroo/kanata/releases/latest
+-->
+[dl-kanata]:   https://github.com/jtroo/kanata/releases/tag/v1.11.0
+[dl-aekeynox]: https://github.com/OneDeadKey/kanata-config-aekeynox/releases/latest
 
 
 Usage
 --------------------------------------------------------------------------------
 
 - Get Ækeynox:
-  - check out this repository with Git or [download it][dl-aekeynox]
+  - download the [latest release][dl-aekeynox],
+    or check out this repository with Git
   - [configure `kanata.kbd`](#configuration): Ækeynox-kanata does nothing by
-    default, every feature must be enabled on an opt-in basis.
+    default, every feature must be enabled on an opt-in basis
 - Get Kanata:
   - download a [pre-built executable][dl-kanata]
   - unzip it into the Ækeynox folder
