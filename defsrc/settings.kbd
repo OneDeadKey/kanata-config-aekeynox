@@ -7,8 +7,8 @@
   ;; https://github.com/OneDeadKey/arsenik/issues/22
   windows-altgr cancel-lctl-press
 
-  ;; Works around a regression introduced by Kanata-winIOv2 0.12.0,
-  ;; but requires Kanata 0.12.1 or newer.
+  ;; Works around a regression introduced by Kanata-winIOv2 1.12.0,
+  ;; but requires Kanata 1.13.0 or newer.
   ;; https://github.com/jtroo/kanata/issues/2115
   ;; windows-sync-keystates none
 )
