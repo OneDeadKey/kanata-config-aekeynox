@@ -47,8 +47,16 @@ There are several Kanata variants for Windows. We recommend using the
 exited with a right-click on its systray icon.
 
 > [!WARNING]
-> Due to a regression in Kanata 0.12.0 ([issue #2115]), Windows users should
-> skip this version. A [workaround] could be used with the next release.
+> Due to a regression in Kanata 1.12.0 ([issue #2115]), Windows users should
+> skip this version. A [workaround] can be used with the next release, by
+> setting `windows-sync-keystates` to `none` in `defsrc/settings.kbd`:
+
+```lisp
+  ;; Works around a regression introduced by Kanata-winIOv2 1.12.0,
+  ;; but requires Kanata 1.13.0 or newer.
+  ;; https://github.com/jtroo/kanata/issues/2115
+  windows-sync-keystates none
+```
 
 [issue #2115]: https://github.com/jtroo/kanata/issues/2115
 [workaround]:  https://github.com/jtroo/kanata/issues/2122
