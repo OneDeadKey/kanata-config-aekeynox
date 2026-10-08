@@ -41,10 +41,17 @@ See OS-specific instructions below.
 
 ### Windows
 
-There are several Kanata variants for Windows. We recommend using
-`kanata_windows_gui_winIOv2_[arch].exe`: put it in the Ækeynox folder, start it
+There are several Kanata variants for Windows. We recommend using the
+`gui_winIOv2` variant: put it in the Ækeynox folder, start it
 (double-click), and Kanata will run in the background. It can be reloaded or
 exited with a right-click on its systray icon.
+
+> [!WARNING]
+> Due to a regression in Kanata 0.12.0 ([issue #2115]), Windows users should
+> skip this version. A [workaround] could be used with the next release.
+
+[issue #2115]: https://github.com/jtroo/kanata/issues/2115
+[workaround]:  https://github.com/jtroo/kanata/issues/2122
 
 ### Linux
 
