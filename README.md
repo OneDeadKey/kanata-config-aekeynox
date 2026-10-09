@@ -334,48 +334,21 @@ The `Symbols` layer, as well as the keyboard shortcuts in the `Navigation`
 layer, depend on the keyboard layout: QWERTY, AZERTY, QWERTZ… This keyboard
 layout must be selected accordingly in the last configuration section.
 
-### ASCII Layouts: QWERTY-US, Dvorak, Colemak…
+If your keyboard layout isn’t already supported, creating the corresponding
+aliases file should be straightforward. Pull requests are welcome, and our
+maintainers can assist you if needed.
 
-These layouts work fine out of the box: just make sure the default `Symbols`
-layer is included.
+We recommend using the default `Symbols` layer (`symbols.kbd`) for any keyboard
+layout; however, there are two edge cases where you could prefer an
+<kbd>AltGr</kbd>/<kbd>Option</kbd> layer (`symbols_altgr`):
 
-```lisp
-(include deflayer/symbols.kbd) ;; programming symbols
-```
+- when your keyboard layout already has an optimized `Symbols` layer (e.g.
+  Ergo‑L, QWERTY-Lafayette, Neo…);
+- when your keyboard layout requires <kbd>AltGr</kbd> or <kbd>Option</kbd> for
+  common text input (e.g. Bépo).
 
-Adding support for another layout should be straightforward, mostly by copying
-and pasting the `defalias/qwerty.kbd` file. Pull requests are welcome.
-
-### Non-ASCII Layouts: AZERTY, QWERTZ, Ergo‑L…
-
-These layouts can be trickier, as they rely on an <kbd>AltGr</kbd> key for some
-of their common symbols. In some cases, you might want to ditch the `Symbols`
-layer and keep <kbd>AltGr</kbd> under the right thumb.
-
-- Most European layouts (AZERTY, QWERTZ, non-US QWERTY variants) use
-  <kbd>AltGr</kbd> mostly for programming symbols and the `€` sign.
-  Arsenik-kanata sets `€` on <kbd>Sym</kbd>+<kbd>'</kbd> or
-  <kbd>Nav</kbd>+<kbd>'</kbd> (= the key next to the right pinky in the home row), so
-  you can keep the `Symbols` layer.
-
-- Some ergonomic layouts such as Ergo‑L or QWERTY-Lafayette already have the
-  Arsenik `Symbols` layer with <kbd>AltGr</kbd>. On these layouts, both
-  `symbols.kbd` and `symbols_altgr.kbd` work; by choosing the latter, you’ll
-  keep special chars with <kbd>Shift</kbd>+<kbd>AltGr</kbd>, but some keyboard
-  shortcuts like <kbd>Ctrl</kbd><kbd>+</kbd> might not work within the `Symbols`
-  layer.
-
-- Some alternative layouts like Bépo require <kbd>AltGr</kbd> for common
-  letters. In such a case, you probably want to drop the `Symbols` layer, and
-  keep <kbd>AltGr</kbd> instead.
-
-```lisp
-(include deflayer/symbols_altgr.kbd) ;; AltGr/Option layer
-```
-
-Adding support for non-ASCII layouts can be tricky, as the position of every
-symbol can be very specific to a layout *and an operating system*. Open a pull
-request, and we’ll assist you to add your layout.
+(Note for European users: don’t worry about the € sign, it’s available on
+<kbd>Nav</kbd><kbd>'</kbd> or <kbd>Sym</kbd><kbd>'</kbd>.)
 
 
 Troubleshooting
