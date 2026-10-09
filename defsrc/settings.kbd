@@ -11,9 +11,6 @@
   ;; but requires Kanata 1.13.0 or newer.
   ;; https://github.com/jtroo/kanata/issues/2115
   ;; windows-sync-keystates none
-
-  ;; Linux: limit Kanata to the laptop keyboard
-  ;; linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
 )
 
 ;; Timing variables for tap-hold effects.
