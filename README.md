@@ -274,6 +274,46 @@ you don’t want to follow the Arsenik spec.
 > when layer-taps are activated, the whole configuration can be live-reloaded
 > with <kbd>Space</kbd>+<kbd>Esc</kbd>.
 
+<details>
+<summary>Bonus: restrict Kanata to the laptop keyboard</summary>
+
+On macOS and Linux, starting with version v1.10.0, Kanata can be configured to
+ignore external keyboards.
+
+First, find your laptop keyboard with `kanata --list`. The output looks like
+this:
+
+```
+Available keyboard devices:
+===========================
+Found 2 keyboard device(s):
+
+  1. "ThinkPad Extra Buttons"
+     Path: /dev/input/event9
+     Vendor ID: 6058 (0x17AA), Product ID: 20564 (0x5054)
+
+  2. "AT Translated Set 2 keyboard"
+     Path: /dev/input/event3
+     Vendor ID: 1 (0x0001), Product ID: 1 (0x0001)
+
+Configuration example:
+  (defcfg
+    linux-dev-names-include (
+      "ThinkPad Extra Buttons"
+      "AT Translated Set 2 keyboard"
+    )
+  )
+```
+
+Then copy the `linux-dev-names-include` section (or `macos-dev-names-include` on
+Mac) into the `defcfg` section in `defsrc/settings.kbd`.
+
+More information in Kanata’s user guide:
+[linux-dev-names-include](https://jtroo.github.io/config.html#linux-only-linux-dev-names-include),
+[macos-dev-names-include](https://jtroo.github.io/config.html#macos-only-macos-dev-names-include).
+
+</details>
+
 
 Why the name?
 --------------------------------------------------------------------------------
