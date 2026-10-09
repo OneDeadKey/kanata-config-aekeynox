@@ -343,7 +343,8 @@ layout; however, there are two edge cases where you could prefer an
 <kbd>AltGr</kbd>/<kbd>Option</kbd> layer (`symbols_altgr`):
 
 - when your keyboard layout already has an optimized `Symbols` layer (e.g.
-  Ergo‑L, QWERTY-Lafayette, Neo…);
+  Ergo‑L or QWERTY-Lafayette, which already have Ækeynox’s Symbols layer,
+  or Neo, which has its own Symbols layer);
 - when your keyboard layout requires <kbd>AltGr</kbd> or <kbd>Option</kbd> for
   common text input (e.g. Bépo).
 
