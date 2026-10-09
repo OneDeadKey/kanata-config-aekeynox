@@ -355,7 +355,7 @@ layer and keep <kbd>AltGr</kbd> under the right thumb.
 - Most European layouts (AZERTY, QWERTZ, non-US QWERTY variants) use
   <kbd>AltGr</kbd> mostly for programming symbols and the `€` sign.
   Arsenik-kanata sets `€` on <kbd>Sym</kbd>+<kbd>'</kbd> or
-  <kbd>Nav</kbd>+<kbd>'</kbd> (= the key next to the pinky in the home row), so
+  <kbd>Nav</kbd>+<kbd>'</kbd> (= the key next to the right pinky in the home row), so
   you can keep the `Symbols` layer.
 
 - Some ergonomic layouts such as Ergo‑L or QWERTY-Lafayette already have the
