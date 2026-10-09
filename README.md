@@ -66,74 +66,85 @@ exited with a right-click on its systray icon.
 
 ### Linux
 
+Kanata is available as an official package in most Linux distributions.
+
+For Kanata to start automatically after login, follow the two sections below.
+
 <details>
 <summary>Run Kanata without <code>sudo</code></summary>
 
-Kanata needs to intercept `uinput` signals, which it cannot do without the
-proper authorisations.
-
-If you don’t want to run `kanata` with `sudo`, you’ll need to allow Kanata to
-read from `uinput`. This requires the users to be part of both `input` and
-`uinput` groups.
-
-For that, you first need to create a `uinput` group if it doesn’t exist yet:
+Kanata has to access the `input` and `uinput` subsystems, which requires proper
+authorizations. To avoid running Kanata with `sudo`, your user must be added to
+these groups:
 
 ```bash
-sudo groupadd -U $USERNAME uinput
+# Create the `uinput` group if it doesn't exist
+sudo groupadd --system uinput
+
+# Add your user to the `input` and `uinput` groups
+sudo usermod -aG input $USER
+sudo usermod -aG uinput $USER
 ```
 
-where `$USERNAME` is the target user (or users in a comma-separated list). Then
-add the target user (or users) to the group input:
+You’ll have to log out and relog in (or even reboot) for these changes to apply.
+Make sure the `input` and `uinput` groups appear in the output of the `groups`
+command.
+
+Now create a `udev` rule to give `uinput` the required permissions:
 
 ```bash
-sudo usermod -aG input $USERNAME
-```
-
-You can check after re-logging that both groups appear in the result of the
-`groups` command launched as the target user.
-
-Finally, you need to add a udev rule in `/etc/udev/rules.d/50-kanata.rules`:
-
-```udev
+# Create the udev rule for `uinput`
+sudo tee /etc/udev/rules.d/99-input.rules > /dev/null <<EOF
 KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+EOF
+
+# Reload uvdev rules
+sudo udevadm control --reload && udevadm trigger
 ```
+
 </details>
 
 <details>
-<summary>Make a User-Side <code>systemd</code> Service for Kanata</summary>
+<summary>Make a user-side <code>systemd</code> service for Kanata</summary>
 
-Note: This only works if `kanata` is able to run without `sudo` (and is using
-`systemd`).
+Now that Kanata can run without `sudo` permissions, we can use a systemd
+service to run it as a daemon right after logging in.
 
-Using a `systemd service` allows running `kanata` as a daemon, possibly right
-after logging in. Here is a template for a service file:
+Create a `~/.config/systemd/user/kanata.service` file with the following
+content:
 
 ```properties
 [Unit]
-Description=kanata keyboard remapper
+Description=Kanata keyboard remapper
 Documentation=https://github.com/jtroo/kanata
 
 [Service]
 Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
-Environment=DISPLAY=:0
-Environment=HOME=/path/to/home/folder
 Type=simple
-ExecStart=/usr/local/bin/kanata --cfg /path/to/kanata/config/file
+ExecStart=/path/to/kanata --cfg /path/to/kanata/config.kbd
 Restart=no
 
 [Install]
 WantedBy=default.target
 ```
 
-Copy-paste it into `~/.config/systemd/user/kanata.service`, fill in the
-placeholders, then run one of the following commands:
+Replace `/path/to/kanata` and `/path/to/kanata/config.kbd` by the proper paths
+of the Kanata executable and the Ækeynox configuration file, respectively.
 
-- `systemctl --user start kanata.service` to manually start `kanata`
-- `systemctl --user enable kanata.service` so `kanata` may autostart whenever
-the current user logs in
-- `systemctl --user status kanata.service` to check if `kanata` is running
+Now enable `kanata.service` and make sure it’s running:
+
+```bash
+systemctl --user daemon-reload
+systemctl --user enable kanata.service  # auto-start Kanata when user logs in
+systemctl --user start  kanata.service  # start Kanata manually
+systemctl --user status kanata.service  # check that the service is running
+```
+
 </details>
 
+[See the Kanata documentation](linux) for further information.
+
+[linux]: https://github.com/jtroo/kanata/blob/main/docs/setup-linux.md
 
 ### macOS
 
