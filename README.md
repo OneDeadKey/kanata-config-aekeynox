@@ -343,7 +343,7 @@ layer is included.
 (include deflayer/symbols.kbd) ;; programming symbols
 ```
 
-Adding support for another layout should be straight-forward, mostly by copying
+Adding support for another layout should be straightforward, mostly by copying
 and pasting the `defalias/qwerty.kbd` file. Pull requests are welcome.
 
 ### Non-ASCII Layouts: AZERTY, QWERTZ, Ergo‑L…
