@@ -1,0 +1,28 @@
+;; HRM: layer-taps under the thumbs + home-row mods on SDF and JKL
+
+;; Timing variables are defined in the `settings.kbd` file.
+(deftemplate hrm_ring (key)
+  (tap-hold $QUICK_TAP $TAPPING_TERM $key $HM3)
+)
+(deftemplate hrm_middle (key)
+  (tap-hold $QUICK_TAP $TAPPING_TERM $key $HM2)
+)
+(deftemplate hrm_index (key)
+  (tap-hold $QUICK_TAP $TAPPING_TERM $key $HM1)
+)
+(deftemplate hrm (key mod)
+  (tap-hold $QUICK_TAP $TAPPING_TERM $key $mod)
+)
+
+
+(defalias
+  ;; Main mod-tap: Nav layer when held, Space when tapped.
+  nav (tap-hold $QUICK_TAP $TAPPING_TERM spc (layer-while-held navigation))
+
+  ;; Space-cadet thumb keys: Shift/BackSpace, AltGr/Enter.
+  ;; Acts as a modifier by default, or as BackSpace/Enter when tapped separately.
+  mod (tap-hold-press $QUICK_TAP $HOLDING_TERM bspc lsft)
+  sym (tap-hold-press $QUICK_TAP $HOLDING_TERM ret (layer-while-held symbols))
+)
+
+;; vim: set ft=lisp:

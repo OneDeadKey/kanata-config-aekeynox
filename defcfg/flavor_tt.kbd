@@ -1,0 +1,17 @@
+;; TT: Thumb-Taps
+
+(deftemplate hrm_ring   (key) $key)
+(deftemplate hrm_middle (key) $key)
+(deftemplate hrm_index  (key) $key)
+
+(defalias
+  ;; Main mod-tap: Nav layer when held, Space when tapped.
+  nav (tap-hold $QUICK_TAP $TAPPING_TERM spc (layer-while-held navigation))
+
+  ;; Space-cadet thumb keys: Alt/BackSpace, AltGr/Enter.
+  ;; Acts as a modifier by default, or as BackSpace/Enter when tapped separately.
+  mod (tap-hold-press $QUICK_TAP $HOLDING_TERM bspc _)
+  sym (tap-hold-press $QUICK_TAP $HOLDING_TERM ret (layer-while-held symbols))
+)
+
+;; vim: set ft=lisp:

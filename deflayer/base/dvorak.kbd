@@ -1,0 +1,21 @@
+;; base layer: Dvorak over QWERTY
+(deflayer base
+  _
+  1    2    3    4    5   bspc  6    7    8    9    0    [    ]
+  '    ,    .    p    y   ret   f    g    c    r    l    /    =
+  a    @o   @e   @u   i    \    d    @h   @t   @n   s    -
+  ;    q    j    k    x   lbot  b    m    w    v    z
+                @mod      @nav      @sym
+)
+
+;; home row mods
+(defalias
+  o (t! hrm_ring   o)
+  e (t! hrm_middle e)
+  u (t! hrm_index  u)
+  h (t! hrm_index  h)
+  t (t! hrm_middle t)
+  n (t! hrm_ring   n)
+)
+
+;; vim: set ft=lisp:

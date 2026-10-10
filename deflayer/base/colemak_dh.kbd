@@ -1,0 +1,21 @@
+;; base layer: Colemak-DH over QWERTY
+(deflayer base
+  _
+  1    2    3    4    5   bspc  6    7    8    9    0    -    =
+  q    w    f    p    b   ret   j    l    u    y    ;    [    ]
+  a    @r   @s   @t   g    \    m    @n   @e   @i   o    '
+  z    x    c    d    v   lbot  k    h    ,    .    /
+                @mod      @nav      @sym
+)
+
+;; home row mods
+(defalias
+  r (t! hrm_ring   r)
+  s (t! hrm_middle s)
+  t (t! hrm_index  t)
+  n (t! hrm_index  n)
+  e (t! hrm_middle e)
+  i (t! hrm_ring   i)
+)
+
+;; vim: set ft=lisp:

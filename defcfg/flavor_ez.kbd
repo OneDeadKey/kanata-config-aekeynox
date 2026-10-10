@@ -1,0 +1,13 @@
+;; EZ: standard keyboard behavior
+
+(deftemplate hrm_ring   (key) $key)
+(deftemplate hrm_middle (key) $key)
+(deftemplate hrm_index  (key) $key)
+
+(defalias
+  nav _
+  mod _
+  sym _
+)
+
+;; vim: set ft=lisp:

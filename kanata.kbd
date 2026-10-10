@@ -9,7 +9,7 @@
 ;; this configuration can be live-reloaded with Space+Esc.
 
 ;; General settings
-(include defsrc/settings.kbd)
+(include defcfg/settings.kbd)
 
 
 ;;============================================================================
@@ -43,22 +43,33 @@
 
 
 ;;-----------------------------------------------------------------------------
-;; `Base` Layer (dual keys)
+;; Flavor (dual keys)
 ;;-----------------------------------------------------------------------------
 ;; Dual keys can be enabled here:
-;;  - `lt` (layer-taps):
+;;  - `EZ`: no mod-taps
+;;    = standard keyboard behavior
+;;  - `TT`; thumb-taps
 ;;    - the right thumb key brings the `Symbols` layer
 ;;    - a long press on the space bar brings the `Navigation` layer
 ;;    - a quick tap on the left/right thumb key makes Backspace/Enter
-;;  - `lt_hrm` (layer-taps + homerow-mods):
+;;  - `HRM`: thumb-taps + home row mods
 ;;    - the left thumb key becomes Shift
 ;;    - SDF/JKL become Meta/Ctrl/Alt when held
 
-(include deflayer/base.kbd)            ;; standard keyboard behavior
-;; (include deflayer/base_lt.kbd)         ;; layer-taps on thumb keys
-;; (include deflayer/base_lt_hrm.kbd)     ;; layer-taps + homerow mods
+(include defcfg/flavor_ez.kbd)    ;; standard keyboard behavior
+;; (include defcfg/flavor_tt.kbd)    ;; layer-taps on thumb keys
+;; (include defcfg/flavor_hrm.kbd)   ;; layer-taps + home row mods
 
-;; Note: not enabling layer-taps here makes the rest of the file useless.
+
+;;-----------------------------------------------------------------------------
+;; `Base` Layer
+;;-----------------------------------------------------------------------------
+;; A layout emulation can be enabled here.
+
+(include deflayer/base.kbd)              ;; no emulation
+;; (include deflayer/base/colemak.kbd)      ;; QWERTY to Colemak
+;; (include deflayer/base/colemak_dh.kbd)   ;; QWERTY to Colemak-DH
+;; (include deflayer/base/dvorak.kbd)       ;; QWERTY to Dvorak
 
 
 ;;-----------------------------------------------------------------------------
