@@ -325,7 +325,7 @@ Configuration example:
 Then copy the `linux-dev-names-include` section (or `macos-dev-names-include` on
 Mac) into the `defcfg` section in `defsrc/settings.kbd`.
 
-More information in Kanata’s user guide:
+More information in Kanata’s configuration guide:
 [linux-dev-names-include](https://jtroo.github.io/config.html#linux-only-linux-dev-names-include),
 [macos-dev-names-include](https://jtroo.github.io/config.html#macos-only-macos-dev-names-include).
 
