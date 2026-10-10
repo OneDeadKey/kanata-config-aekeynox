@@ -98,7 +98,7 @@ sudo tee /etc/udev/rules.d/99-input.rules > /dev/null <<EOF
 KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
 EOF
 
-# Reload uvdev rules
+# Reload udev rules
 sudo udevadm control --reload && udevadm trigger
 ```
 
@@ -110,8 +110,13 @@ sudo udevadm control --reload && udevadm trigger
 Now that Kanata can run without `sudo` permissions, we can use a systemd
 service to run it as a daemon right after logging in.
 
-Create a `~/.config/systemd/user/kanata.service` file with the following
-content:
+Create this file:
+
+```
+~/.config/systemd/user/kanata.service
+```
+
+with the following content:
 
 ```properties
 [Unit]
