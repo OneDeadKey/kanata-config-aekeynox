@@ -335,26 +335,48 @@ More information in Kanata’s configuration guide:
 Keyboard Layout
 --------------------------------------------------------------------------------
 
-The `Symbols` layer, as well as the keyboard shortcuts in the `Navigation`
-layer, depend on the keyboard layout: QWERTY, AZERTY, QWERTZ… This keyboard
-layout must be selected accordingly in the last configuration section.
+The keyboard layout is a tricky part of the Ækeynox configuration. We consider:
+
+- the *host layout*, i.e. the keyboard layout that your operating system is
+configured for. For almost all American users, it’s QWERTY.
+- The *emulated layout*, i.e. the keyboard layout that Kanata can implement over
+the host layout. European users generally don’t use any emulation: their
+keyboard layout is defined by their OS settings, not by Kanata.
+- The *hardware layout*, i.e. the name of the physical keys. It’s always QWERTY.
+The `q` key in a Kanata file makes an `a` on an AZERTY host.
+
+### Host Layout
+
+The whole `Symbols` layer and some `Navigation` shortcuts depend on the host
+keyboard layout, i.e. the layout defined in your system settings: QWERTY,
+AZERTY, QWERTZ… Make sure it’s properly selected in the dedicated section.
 
 If your keyboard layout isn’t already supported, creating the corresponding
 aliases file should be straightforward. Pull requests are welcome, and our
 maintainers can assist you if needed.
 
-We recommend using the default `Symbols` layer (`symbols.kbd`) for any keyboard
-layout; however, there are two edge cases where you could prefer an
-<kbd>AltGr</kbd>/<kbd>Option</kbd> layer (`symbols_altgr`):
+The default `Symbols` layer (`symbols.kbd`) is recommended to almost all users.
+However, there are two edge cases where an <kbd>AltGr</kbd>/<kbd>Option</kbd>
+layer (`symbols_altgr.kbd`) could be preferred:
 
-- when your keyboard layout already has an optimized `Symbols` layer (e.g.
-  Ergo‑L or QWERTY-Lafayette, which already have Ækeynox’s Symbols layer,
-  or Neo, which has its own Symbols layer);
-- when your keyboard layout requires <kbd>AltGr</kbd> or <kbd>Option</kbd> for
+- when your host layout already has an optimized `Symbols` layer (e.g. Ergo‑L
+  or QWERTY-Lafayette, which already have Ækeynox’s Symbols layer, or Neo,
+  which has its own Symbols layer);
+- when your host layout requires <kbd>AltGr</kbd> or <kbd>Option</kbd> for
   common text input (e.g. Bépo).
 
 (Note for European users: don’t worry about the € sign, it’s available on
 <kbd>Nav</kbd><kbd>'</kbd> or <kbd>Sym</kbd><kbd>'</kbd>.)
+
+### Emulated Layout
+
+On a QWERTY host, alternative ASCII layouts can be emulated: Colemak,
+Colemak‑DH, Dvorak… Make sure QWERTY is properly selected as the host layout in
+the dedicated section.
+
+Creating a layout file for other ASCII layouts should be straightforward, but
+emulating non-ASCII layouts is trickier. Again, pull requests are welcome,
+and our maintainers can assist you if needed.
 
 
 Troubleshooting
