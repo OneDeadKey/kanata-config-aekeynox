@@ -1,10 +1,11 @@
 ;; Import standard ISO defsrc
-(include ../../defsrc/settings.kbd)
+(include ../../defcfg/settings.kbd)
 (include ../../defsrc/iso.kbd)
 (include ../../defsrc/layout.kbd)
 
 ;; HRM + symbols + Vim
-(include ../../deflayer/base_lt_hrm.kbd)
+(include ../../defcfg/flavor_hrm.kbd)
+(include ../../deflayer/base.kbd)
 (include ../../deflayer/symbols.kbd)
 (include ../../deflayer/numlock.kbd)
 (include ../../deflayer/numpad.kbd)
