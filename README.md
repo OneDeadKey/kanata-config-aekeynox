@@ -335,8 +335,10 @@ More information in Kanata’s configuration guide:
 Keyboard Layout
 --------------------------------------------------------------------------------
 
+### Host Layout (System)
+
 The `Symbols` layer, as well as the keyboard shortcuts in the `Navigation`
-layer, depend on the keyboard layout: QWERTY, AZERTY, QWERTZ… This keyboard
+layer, depend on the current OS layout: QWERTY, AZERTY, QWERTZ… This keyboard
 layout must be selected accordingly in the last configuration section.
 
 If your keyboard layout isn’t already supported, creating the corresponding
@@ -355,6 +357,14 @@ layout; however, there are two edge cases where you could prefer an
 
 (Note for European users: don’t worry about the € sign, it’s available on
 <kbd>Nav</kbd><kbd>'</kbd> or <kbd>Sym</kbd><kbd>'</kbd>.)
+
+### Layout Emulation
+
+On a QWERTY host, these layouts can be emulated: Colemak, Colemak-DH, Dvorak.
+
+Creating a layout file for other ASCII layouts should be straightforward, but
+emulating non-ASCII layouts is trickier. Again, pull requests are welcome,
+and our maintainers can assist you if needed.
 
 
 Troubleshooting

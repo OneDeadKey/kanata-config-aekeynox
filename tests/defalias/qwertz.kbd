@@ -1,5 +1,6 @@
 ;; Import default config
-(include ../../defsrc/settings.kbd)
+(include ../../defcfg/settings.kbd)
+(include ../../defcfg/flavor_ez.kbd)
 (include ../../defsrc/iso.kbd)
 (include ../../defsrc/layout.kbd)
 (include ../../deflayer/base.kbd)
