@@ -1,4 +1,5 @@
-(include ../../defsrc/settings.kbd)
+(include ../../defcfg/settings.kbd)
+(include ../../defcfg/flavor_ez.kbd)
 
 ;; ISO + anglemod
 (include ../../defsrc/iso.kbd)

@@ -1,19 +1,21 @@
 ;;==========================================================================;;
 ;;                                                                          ;;
 ;;  Pick and choose the features you want for your keyboard:                ;;
-;;  angle mod, layer-taps, navigation layer, Mac/Azerty/Qwertz support...   ;;
+;;  angle mod, dual keys, keyboard layout, navigation layer...              ;;
 ;;                                                                          ;;
 ;;==========================================================================;;
 
-;; Note: if layer-taps are enabled (see the "Base layer" section below),
+;; NOTE:
+;; If dual keys are enabled (see the "Flavor" section below),
 ;; this configuration can be live-reloaded with Space+Esc.
 
 ;; General settings
-(include defsrc/settings.kbd)
+(include defcfg/settings.kbd)
 
 
+;; NOTE:
 ;;============================================================================
-;; Every section below should enable ONE and only one `include` statement
+;; Every section below must enable ONE and only one `include` statement:
 ;;============================================================================
 ;;  - do not delete or reorder existing sections
 ;;  - enable each feature by un-commenting the related line
@@ -43,22 +45,35 @@
 
 
 ;;-----------------------------------------------------------------------------
-;; `Base` Layer (dual keys)
+;; Flavor (dual keys)
 ;;-----------------------------------------------------------------------------
 ;; Dual keys can be enabled here:
-;;  - `lt` (layer-taps):
+;;  - `EZ`: no dual keys
+;;    = standard keyboard behavior
+;;  - `TT`: thumb-taps
 ;;    - the right thumb key brings the `Symbols` layer
 ;;    - a long press on the space bar brings the `Navigation` layer
 ;;    - a quick tap on the left/right thumb key makes Backspace/Enter
-;;  - `lt_hrm` (layer-taps + homerow-mods):
+;;  - `HRM`: thumb-taps + home row mods
 ;;    - the left thumb key becomes Shift
 ;;    - SDF/JKL become Meta/Ctrl/Alt when held
 
-(include deflayer/base.kbd)            ;; standard keyboard behavior
-;; (include deflayer/base_lt.kbd)         ;; layer-taps on thumb keys
-;; (include deflayer/base_lt_hrm.kbd)     ;; layer-taps + homerow mods
+(include defcfg/flavor_ez.kbd)    ;; standard keyboard behavior
+;; (include defcfg/flavor_tt.kbd)    ;; thumb taps
+;; (include defcfg/flavor_hrm.kbd)   ;; thumb taps + home row mods
 
-;; Note: not enabling layer-taps here makes the rest of the file useless.
+
+;;-----------------------------------------------------------------------------
+;; `Base` Layer
+;;-----------------------------------------------------------------------------
+;; = the hardware layout
+
+(include deflayer/base.kbd)
+
+
+;; NOTE:
+;; If dual keys are not enabled (see the "Flavor" section above),
+;; the rest of this file can be ignored.
 
 
 ;;-----------------------------------------------------------------------------
@@ -76,7 +91,7 @@
 ;; `NumLock` Layer
 ;;-----------------------------------------------------------------------------
 ;; Enabled by Nav+[P], disabled by [P] or Sym.
-;; Almost identical to `numpad` layer below, but locked, and without any layer-tap.
+;; Similar to the `numpad` layer below, but locked, and without any dual key.
 
 (include deflayer/numlock.kbd)
 
