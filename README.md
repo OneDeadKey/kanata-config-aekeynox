@@ -370,7 +370,9 @@ layer (`symbols_altgr.kbd`) could be preferred:
 
 ### Emulated Layout
 
-On a QWERTY host, these layouts can be emulated: Colemak, Colemak-DH, Dvorak.
+On a QWERTY host, alternative ASCII layouts can be emulated: Colemak,
+Colemak‑DH, Dvorak… Make sure QWERTY is properly selected as the host layout in
+the dedicated section.
 
 Creating a layout file for other ASCII layouts should be straightforward, but
 emulating non-ASCII layouts is trickier. Again, pull requests are welcome,
