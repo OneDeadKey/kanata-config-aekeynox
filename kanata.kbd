@@ -43,12 +43,41 @@
 
 
 ;;-----------------------------------------------------------------------------
+;; Host Layout
+;;-----------------------------------------------------------------------------
+;; The whole `Symbols` layer and some `Navigation` shortcuts depend on the host
+;; keyboard layout, i.e. the layout defined in your system settings.
+;; Pick your aliases accordingly below.
+
+(include defalias/qwerty.kbd)
+;; (include defalias/qwertz.kbd)
+;; (include defalias/azerty.kbd)
+;; (include defalias/lafayette.kbd)
+;; (include defalias/ergol.kbd)
+;; (include defalias/bepo.kbd)
+
+
+;;-----------------------------------------------------------------------------
+;; Emulated Layout
+;;-----------------------------------------------------------------------------
+;; A layout emulation can be enabled in the `Base` layer.
+;; When using an emulation, make sure that the expected host layout
+;; (e.g. QWERTY, AZERTY) has been selected in the previous section.
+
+(include deflayer/base.kbd)              ;; no emulation
+;; (include deflayer/base/colemak.kbd)      ;; QWERTY to Colemak
+;; (include deflayer/base/colemak_dh.kbd)   ;; QWERTY to Colemak-DH
+;; (include deflayer/base/dvorak.kbd)       ;; QWERTY to Dvorak
+;; (include deflayer/base/ergol.kbd)        ;; AZERTY to Ergo-L
+
+
+;;-----------------------------------------------------------------------------
 ;; Flavor (dual keys)
 ;;-----------------------------------------------------------------------------
 ;; Dual keys can be enabled here:
 ;;  - `EZ`: no mod-taps
 ;;    = standard keyboard behavior
-;;  - `TT`; thumb-taps
+;;  - `TT`: thumb-taps
 ;;    - the right thumb key brings the `Symbols` layer
 ;;    - a long press on the space bar brings the `Navigation` layer
 ;;    - a quick tap on the left/right thumb key makes Backspace/Enter
@@ -59,19 +88,6 @@
 (include defcfg/flavor_ez.kbd)    ;; standard keyboard behavior
 ;; (include defcfg/flavor_tt.kbd)    ;; layer-taps on thumb keys
 ;; (include defcfg/flavor_hrm.kbd)   ;; layer-taps + home row mods
-
-
-;;-----------------------------------------------------------------------------
-;; `Base` Layer
-;;-----------------------------------------------------------------------------
-;; A layout emulation can be enabled here.
-;; When using an emulation, make sure that the corresponding host layout
-;; (e.g. QWERTY, AZERTY) has been selected in the last section in this file.
-
-(include deflayer/base.kbd)              ;; no emulation
-;; (include deflayer/base/colemak.kbd)      ;; QWERTY to Colemak
-;; (include deflayer/base/colemak_dh.kbd)   ;; QWERTY to Colemak-DH
-;; (include deflayer/base/dvorak.kbd)       ;; QWERTY to Dvorak
 
 
 ;;-----------------------------------------------------------------------------
@@ -118,19 +134,5 @@
 ;; Triggered by Nav+Sym.
 
 (include deflayer/funmedia.kbd)
-
-
-;;-----------------------------------------------------------------------------
-;; Aliases for `Symbols` and `Navigation` Layers
-;;-----------------------------------------------------------------------------
-;; Symbols and shortcuts in the Navigation layer depend on the keyboard layout.
-;; Pick your aliases accordingly.
-
-(include defalias/qwerty.kbd)
-;; (include defalias/qwertz.kbd)
-;; (include defalias/azerty.kbd)
-;; (include defalias/lafayette.kbd)
-;; (include defalias/ergol.kbd)
-;; (include defalias/bepo.kbd)
 
 ;; vim: set ft=lisp:
