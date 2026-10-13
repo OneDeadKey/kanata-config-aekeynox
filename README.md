@@ -374,6 +374,10 @@ On a QWERTY host, alternative ASCII layouts can be emulated: Colemak,
 Colemak‑DH, Dvorak… Make sure QWERTY is properly selected as the host layout in
 the dedicated section.
 
+Emulating non-ASCII layouts is still experimental. Currently, two alternative
+layouts can be emulated over AZERTY: Ergo-L and QWERTY-Lafayette. Make sure
+AZERTY is properly selected as the host layout.
+
 Creating a layout file for other ASCII layouts should be straightforward, but
 emulating non-ASCII layouts is trickier. Again, pull requests are welcome,
 and our maintainers can assist you if needed.

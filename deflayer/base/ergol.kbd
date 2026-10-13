@@ -1,0 +1,75 @@
+;; base layer: Ergo‑L over AZERTY
+(deflayer base
+  _
+ @n1  @n2  @n3  @n4  @n5  bspc  @n6  @n7  @n8  @n9  @n0  @s/  @s=
+  a    c    o    p    z   ret    j    ;    d   @odk  y   @s[  @s]
+  q   @s   @e   @n    f   @s\    l   @r   @t   @i    u   @s'
+  w    x   @s-   v    b   lbot  @s.   h    g   @s,   k
+                @mod      @nav       @sym
+)
+
+;; 1dk layer
+(deflayer 1dk
+  _
+  @„   @“   @”   @¢   @‰   _    XX   XX   @§   @¶   @°   XX   XX
+  @â   @ç   @œ   @ô   XX   _    XX   @µ   @_   S-[  @û   XX   XX
+  @à   @é   @è   @ê   @ñ   _    @pl  @pr  @î   @ï   @ù   XX
+  @æ   @ß   _    @–   @—   _    @…   XX   XX   @·   XX
+               @odks     @apos        _
+)
+
+;; home row mods
+(defalias
+  s (t! hrm_ring   s)
+  e (t! hrm_middle e)
+  n (t! hrm_index  n)
+  r (t! hrm_index  r)
+  t (t! hrm_middle t)
+  i (t! hrm_ring   i)
+)
+
+;; Shifted Keys
+;; Note: s-key is defined along with the AZERTY aliases
+(defalias
+  spce (t! s-key spc (unicode  )) ;; space / narrow no-break space
+  odk  (t! s-key (one-shot-press 1000 (layer-while-held 1dk)) @!)
+  odks (multi sft (one-shot-press 1000 (layer-while-held 1dk)))
+
+  ;; apos (unicode ’)
+  ;; apos (unicode ’)
+  apos @'
+
+  ;; numbers row
+  n1 (t! s-key @1 @cur)
+  n2 (t! s-key @2 (unicode «))
+  n3 (t! s-key @3 (unicode »))
+  n4 (t! s-key @4 @$)
+  n5 (t! s-key @5 @%)
+  n6 (t! s-key @6 @^)
+  n7 (t! s-key @7 @&)
+  n8 (t! s-key @8 @*)
+  n9 (t! s-key @9 @#)
+  n0 (t! s-key @0 @@)
+
+  ;; outer keys
+  s` (t! s-key @` @~)
+  s/ (t! s-key @/ @_)
+  s= (t! s-key @= @+)
+  s[ (t! s-key @[ @{)
+  s] (t! s-key @] @})
+  s' (t! s-key @' @'')
+  s\ (t! s-key @\ @|)
+  s< (t! s-key @< @>)
+
+  ;; punctuation
+  s- (t! s-key @- @?)
+  s. (t! s-key @. @:)
+  s, (t! s-key @, @;)
+
+  „ (t! s-key (unicode „) (unicode ‚))
+  “ (t! s-key (unicode “) (unicode ‘))
+  ” (t! s-key (unicode ”) (unicode ’))
+  · (t! s-key (unicode ·) (unicode •))
+)
+
+;; vim: set ft=lisp:
