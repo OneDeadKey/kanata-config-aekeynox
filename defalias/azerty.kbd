@@ -148,4 +148,59 @@
   l5 XX
 )
 
+;; Non-ASCII
+(deftemplate s-key (base-action shift-action)
+  (fork $base-action $shift-action (lsft rsft))
+)
+
+(platform (win winiov2 wintercept) (defalias
+  É (unicode É)
+  À (unicode À)
+  È (unicode È)
+  Ù (unicode Ù)
+  Ç (unicode Ç)
+))
+(platform (linux macos) (defalias
+  É (macro caps (unshift 2) caps)
+  À (macro caps (unshift 0) caps)
+  È (macro caps (unshift 7) caps)
+  Ù (macro caps (unshift ') caps)
+  Ç (macro caps (unshift 9) caps)
+))
+
+(defalias
+
+  é (t! s-key 2 @É)
+  à (t! s-key 0 @À)
+  è (t! s-key 7 @È)
+  ù (t! s-key ' @Ù)
+  ç (t! s-key 9 @Ç)
+
+  â (macro (unshift [) q)
+  ê (macro (unshift [) e)
+  î (macro (unshift [) i)
+  ô (macro (unshift [) o)
+  û (macro (unshift [) u)
+
+  ï (macro S-[ i)
+
+  µ S-\
+  ° S--
+  § S-/
+
+  œ (t! s-key (unicode œ) (unicode Œ))
+  æ (t! s-key (unicode æ) (unicode Æ))
+  ñ (t! s-key (unicode ñ) (unicode Ñ))
+  ß (t! s-key (unicode ß) (unicode ẞ))
+
+  ¿ (unicode ¿)
+  – (unicode –)
+  — (unicode —)
+  … (unicode …)
+
+  ¢ (unicode ¢)
+  ‰ (unicode ‰)
+  ¶ (unicode ¶)
+)
+
 ;; vim: set ft=lisp:
