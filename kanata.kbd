@@ -5,7 +5,7 @@
 ;;                                                                          ;;
 ;;==========================================================================;;
 
-;; Note: if layer-taps are enabled (see the "Base layer" section below),
+;; Note: if layer-taps are enabled (see the "Flavor" section below),
 ;; this configuration can be live-reloaded with Space+Esc.
 
 ;; General settings
@@ -75,7 +75,7 @@
 ;; Flavor (dual keys)
 ;;-----------------------------------------------------------------------------
 ;; Dual keys can be enabled here:
-;;  - `EZ`: no mod-taps
+;;  - `EZ`: no dual keys
 ;;    = standard keyboard behavior
 ;;  - `TT`: thumb-taps
 ;;    - the right thumb key brings the `Symbols` layer
@@ -86,8 +86,8 @@
 ;;    - SDF/JKL become Meta/Ctrl/Alt when held
 
 (include defcfg/flavor_ez.kbd)    ;; standard keyboard behavior
-;; (include defcfg/flavor_tt.kbd)    ;; layer-taps on thumb keys
-;; (include defcfg/flavor_hrm.kbd)   ;; layer-taps + home row mods
+;; (include defcfg/flavor_tt.kbd)    ;; thumb taps
+;; (include defcfg/flavor_hrm.kbd)   ;; thumb taps + home row mods
 
 
 ;;-----------------------------------------------------------------------------
