@@ -76,6 +76,7 @@
 ;; (include deflayer/base/colemak_dh.kbd)   ;; QWERTY to Colemak-DH
 ;; (include deflayer/base/dvorak.kbd)       ;; QWERTY to Dvorak
 ;; (include deflayer/base/ergol.kbd)        ;; AZERTY to Ergo-L
+;; (include deflayer/base/lafayette.kbd)    ;; AZERTY to QWERTY-Lafayette
 
 
 ;;-----------------------------------------------------------------------------

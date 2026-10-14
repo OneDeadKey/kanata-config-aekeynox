@@ -1,0 +1,75 @@
+;; base layer: QWERTY-Lafayette over AZERTY
+(deflayer base
+  _
+ @n1  @n2  @n3  @n4  @n5  bspc  @n6  @n7  @n8  @n9  @n0  @s-  @s=
+  a    z    e    r    t   ret    y    u    i   o     p   @s[  @s]
+  q   @s   @d   @f    g   @s\    h   @j   @k   @l   @odk @s'
+  w    x    c    v    b   lbot   n    ;   @s,  @s.  @s/
+                @mod      @nav       @sym
+)
+
+;; 1dk layer
+(deflayer 1dk
+  _
+  @„   @“   @”   @¢   @‰   _    XX   XX   @§   @¶   @°   XX   XX
+  @æ   @é   @è   @ô   XX   _    XX   @ù   @ï   @œ   XX   XX   XX
+  @à   @ß   @ê   @-   @–   _    XX   @û   @î   @ô   S-[  XX
+  @â   XX   @ç   @_   @—   _    @ñ   @µ   @…   @·   XX
+               @odks     @apos        _
+)
+
+;; home row mods
+(defalias
+  s (t! hrm_ring   s)
+  d (t! hrm_middle d)
+  f (t! hrm_index  f)
+  j (t! hrm_index  j)
+  k (t! hrm_middle k)
+  l (t! hrm_ring   l)
+)
+
+;; Shifted Keys
+;; Note: s-key is defined along with the AZERTY aliases
+(defalias
+  spce (t! s-key spc (unicode  )) ;; space / narrow no-break space
+  odk  (t! s-key (one-shot-press 1000 (layer-while-held 1dk)) @!)
+  odks (multi sft (one-shot-press 1000 (layer-while-held 1dk)))
+
+  ;; apos (unicode ’)
+  ;; apos (unicode ’)
+  apos @'
+
+  ;; numbers row
+  n1 (t! s-key @1 @cur)
+  n2 (t! s-key @2 @@)
+  n3 (t! s-key @3 @#)
+  n4 (t! s-key @4 @$)
+  n5 (t! s-key @5 @%)
+  n6 (t! s-key @6 @^)
+  n7 (t! s-key @7 @&)
+  n8 (t! s-key @8 @*)
+  n9 (t! s-key @9 @pl)
+  n0 (t! s-key @0 @pr)
+
+  ;; outer keys
+  s` (t! s-key @` @~)
+  s- (t! s-key @- @_)
+  s= (t! s-key @= @+)
+  s[ (t! s-key @[ @{)
+  s] (t! s-key @] @})
+  s' (t! s-key @' @'')
+  s\ (t! s-key @\ @|)
+  s< (t! s-key @< @>)
+
+  ;; punctuation
+  s, (t! s-key @, @;)
+  s. (t! s-key @. @:)
+  s/ (t! s-key @/ @?)
+
+  „ (t! s-key (unicode „) (unicode ‚))
+  “ (t! s-key (unicode “) (unicode ‘))
+  ” (t! s-key (unicode ”) (unicode ’))
+  · (t! s-key (unicode ·) (unicode •))
+)
+
+;; vim: set ft=lisp:
