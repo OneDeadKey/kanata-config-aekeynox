@@ -1,16 +1,21 @@
-;; Base layer: standard keyboard behavior
-
+;; base layer (no emulation)
 (deflayer base
   _
   1    2    3    4    5   bspc  6    7    8    9    0    -    =
   q    w    e    r    t   ret   y    u    i    o    p    [    ]
-  a    s    d    f    g    \    h    j    k    l    ;    '
+  a    @s   @d   @f   g    \    h    @j   @k   @l   ;    '
   z    x    c    v    b   lbot  n    m    ,    .    /
-            _              _              _
+                @mod      @nav      @sym
 )
 
+;; home row mods
 (defalias
-  sym _  ;; Unreachable but navigation layers needs it to be defined.
+  s (t! hrm_ring   s)
+  d (t! hrm_middle d)
+  f (t! hrm_index  f)
+  j (t! hrm_index  j)
+  k (t! hrm_middle k)
+  l (t! hrm_ring   l)
 )
 
 ;; vim: set ft=lisp:
