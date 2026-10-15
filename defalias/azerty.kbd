@@ -33,48 +33,98 @@
   7 S-7
   8 S-8
   9 S-9
-  , m
+  , (unshift m)
   . S-,
 
-  cur AG-e
+  cur (unshift ralt e)
 )
 
 ;; Symbols layer
 (defalias
 
-  ^  (macro [ spc)
-  <  <
-  >  S-<
-  $  ]
+  ;; ^ XXX: platform-specific
+  ;; < XXX: platform-specific
+  ;; > XXX: platform-specific
+  $  (unshift ])
   %  S-'
-  @  AG-0
-  &  1
-  *  \
-  '  4
-  `  (macro AG-7 spc)
+  ;; @ XXX: platform-specific
+  &  (unshift 1)
+  ;; * XXX: platform-specific
+  '  (unshift 4)
+  ;; ` XXX: platform-specific
 
-  {  AG-4
-  pl 5
-  pr -
-  }  AG-=
-  =  =
-  \  AG-8
-  +  S-=
-  -  6
+  ;; { XXX: platform-specific
+  pl (unshift 5)
+  pr (unshift -)
+  ;; } XXX: platform-specific
+  =  (unshift =)
+  ;; \ XXX: platform-specific
+  ;; + XXX: platform-specific
+  ;; - XXX: platform-specific
   /  S-.
-  '' 3
+  '' (unshift 3)
 
-  ~  (macro AG-2 spc)
-  [  AG-5
-  ]  AG--
-  _  8
-  #  AG-3
-  |  AG-6
-  !  /
-  ;  ,
-  :  .
+  ;; ~ XXX: platform-specific
+  ;; [ XXX: platform-specific
+  ;; ] XXX: platform-specific
+  ;; _ XXX: platform-specific
+  ;; # XXX: platform-specific
+  ;; | XXX: platform-specific
+  ;; ! XXX: platform-specific
+  ;  (unshift ,)
+  :  (unshift .)
   ?  S-m
 )
+
+(platform (win winiov2 wintercept) (defalias
+  ` (macro AG-7 spc)
+  ~ (macro AG-2 spc)
+))
+(platform (macos) (defalias
+  ` (macro bksl spc)
+  ~ (macro AG-n spc)
+))
+(platform (linux) (defalias
+  ` (unshift ralt 7)
+  ~ (unshift ralt 2)
+))
+
+(platform (linux win winiov2 wintercept) (defalias
+  ^ (unshift ralt 9)
+  < (unshift <)
+  > S-<
+  @ (unshift ralt 0)
+  * (unshift \)
+  { (unshift ralt 4)
+  } (unshift ralt =)
+  \ (unshift ralt 8)
+  + S-=
+  - (unshift 6)
+  [ (unshift ralt 5)
+  ] (unshift ralt -)
+  _ (unshift 8)
+  # (unshift ralt 3)
+  | (unshift ralt 6)
+  ! (unshift /)
+))
+(platform (macos) (defalias
+  ^ (macro (unshift [) spc)
+  < (unshift `)
+  > S-`
+  @ (unshift <)
+  * S-]
+  { (unshift ralt 5)
+  } (unshift ralt -)
+  \ S-AG-.
+  + S-/
+  - (unshift =)
+  [ S-AG-5
+  ] S-AG--
+  _ S-=
+  # S-<
+  | S-AG-l
+  ! (unshift 8)
+))
 
 ;; NumRow layer
 (defalias
@@ -89,13 +139,68 @@
   s7 7
   s8 8
   s9 9
-  nbs (unicode  ) ;; narrow non-break space
+  nbs (unicode  ) ;; narrow no-break space
 
   l1 XX
   l2 XX
   l3 XX
   l4 XX
   l5 XX
+)
+
+;; Non-ASCII
+(deftemplate s-key (base-action shift-action)
+  (fork $base-action $shift-action (lsft rsft))
+)
+
+(platform (win winiov2 wintercept) (defalias
+  É (unicode É)
+  À (unicode À)
+  È (unicode È)
+  Ù (unicode Ù)
+  Ç (unicode Ç)
+))
+(platform (linux macos) (defalias
+  É (macro caps (unshift 2) caps)
+  À (macro caps (unshift 0) caps)
+  È (macro caps (unshift 7) caps)
+  Ù (macro caps (unshift ') caps)
+  Ç (macro caps (unshift 9) caps)
+))
+
+(defalias
+
+  é (t! s-key 2 @É)
+  à (t! s-key 0 @À)
+  è (t! s-key 7 @È)
+  ù (t! s-key ' @Ù)
+  ç (t! s-key 9 @Ç)
+
+  â (macro (unshift [) q)
+  ê (macro (unshift [) e)
+  î (macro (unshift [) i)
+  ô (macro (unshift [) o)
+  û (macro (unshift [) u)
+
+  ï (macro S-[ i)
+
+  µ S-\
+  ° S--
+  § S-/
+
+  œ (t! s-key (unicode œ) (unicode Œ))
+  æ (t! s-key (unicode æ) (unicode Æ))
+  ñ (t! s-key (unicode ñ) (unicode Ñ))
+  ß (t! s-key (unicode ß) (unicode ẞ))
+
+  ¿ (unicode ¿)
+  – (unicode –)
+  — (unicode —)
+  … (unicode …)
+
+  ¢ (unicode ¢)
+  ‰ (unicode ‰)
+  ¶ (unicode ¶)
 )
 
 ;; vim: set ft=lisp:
