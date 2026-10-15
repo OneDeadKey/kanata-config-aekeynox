@@ -64,11 +64,36 @@
 
 
 ;;-----------------------------------------------------------------------------
-;; `Base` Layer
+;; Host Layout
 ;;-----------------------------------------------------------------------------
-;; = the hardware layout
+;; The whole `Symbols` layer and some `Navigation` shortcuts depend on the host
+;; keyboard layout, i.e. the layout defined in your system settings.
+;; Pick your aliases accordingly below.
 
-(include deflayer/base.kbd)
+(include defalias/qwerty.kbd)
+;; (include defalias/qwertz.kbd)
+;; (include defalias/azerty.kbd)
+;; (include defalias/lafayette.kbd)
+;; (include defalias/ergol.kbd)
+;; (include defalias/bepo.kbd)
+
+
+;;-----------------------------------------------------------------------------
+;; `Base` Layer (and layout emulation)
+;;-----------------------------------------------------------------------------
+;; The `Base` layer can be either:
+;;  - the hardware layout (`base.kbd`)
+;;    => your keyboard follows the host layout (= default behavior),
+;;       which is defined in your system settings.
+;;  - an emulated layout (`base/*.kbd`)
+;;    => your keyboard follows this emulated layout instead of the host layout.
+;;    /!\ Make sure that the expected host layout (i.e. QWERTY)
+;;        has been selected in the previous section.
+
+(include deflayer/base.kbd)              ;; no emulation
+;; (include deflayer/base/colemak.kbd)      ;; QWERTY to Colemak
+;; (include deflayer/base/colemak_dh.kbd)   ;; QWERTY to Colemak-DH
+;; (include deflayer/base/dvorak.kbd)       ;; QWERTY to Dvorak
 
 
 ;; NOTE:
@@ -120,19 +145,5 @@
 ;; Triggered by Nav+Sym.
 
 (include deflayer/funmedia.kbd)
-
-
-;;-----------------------------------------------------------------------------
-;; Aliases for `Symbols` and `Navigation` Layers
-;;-----------------------------------------------------------------------------
-;; Symbols and shortcuts in the Navigation layer depend on the keyboard layout.
-;; Pick your aliases accordingly.
-
-(include defalias/qwerty.kbd)
-;; (include defalias/qwertz.kbd)
-;; (include defalias/azerty.kbd)
-;; (include defalias/lafayette.kbd)
-;; (include defalias/ergol.kbd)
-;; (include defalias/bepo.kbd)
 
 ;; vim: set ft=lisp:
