@@ -18,8 +18,6 @@
   ;; https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs#L175
   v+ VolumeUp
   v- VolumeDown
-  b+ brup
-  b- brdown
 
   ;; Homerow mods are always enabled in this layer
   t0 (tap-hold $QUICK_TAP $TAPPING_TERM pp   $HM1)
@@ -29,9 +27,18 @@
 
 (platform (macos) (defalias
   prtsc M-C-S-3
+  b+    brup
+  b-    brdown
 ))
-(platform (linux win winiov2 wintercept) (defalias
+(platform (linux) (defalias
   prtsc prtsc
+  b+    brup
+  b-    brdown
+))
+(platform (win winiov2 wintercept) (defalias
+  prtsc prtsc
+  b+    XX ;; see https://github.com/jtroo/kanata/issues/2214
+  b-    XX
 ))
 
 ;; vim: set ft=lisp:
