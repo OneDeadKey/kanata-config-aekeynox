@@ -338,12 +338,12 @@ Keyboard Layout
 The keyboard layout is a tricky part of the Ækeynox configuration. We consider:
 
 - the *host layout*, i.e. the keyboard layout that your operating system is
-configured for. For almost all American users, it’s QWERTY.
-- The *emulated layout*, i.e. the keyboard layout that Kanata can implement over
-the host layout. European users generally don’t use any emulation: their
-keyboard layout is defined by their OS settings, not by Kanata.
-- The *hardware layout*, i.e. the name of the physical keys. It’s always QWERTY.
-The `q` key in a Kanata file makes an `a` on an AZERTY host.
+  configured for. For almost all American users, it’s QWERTY.
+- The *emulated layout*, i.e. the keyboard layout that Kanata can implement
+  over the host layout. European users generally don’t use any emulation:
+  their keyboard layout is defined by their OS settings, not by Kanata.
+- The *hardware layout*, i.e. the name of the physical keys. It’s always
+  QWERTY. The `q` key in a Kanata file makes an `a` on an AZERTY host.
 
 ### Host Layout
 
