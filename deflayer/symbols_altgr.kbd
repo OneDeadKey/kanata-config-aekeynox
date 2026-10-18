@@ -1,8 +1,5 @@
-;; Symbol layer: same as AltGr but enables a NumRow.
-;; Concretely this does nothing, just let AltGr as-is for keyboard layouts
-;; depending heavily on AltGr, like Bépo or simply Lafayette layouts like
-;; Ergo‑L, which already have that layer baked in.
-;; Except it adds an NumRow layer.
+;; AltGr layer
+;; + access to the Numbers layer
 
 (deflayer symbols
   XX

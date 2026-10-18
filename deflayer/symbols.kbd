@@ -1,5 +1,5 @@
-;; Symbol layer: Lafayette/Ergo‑L AltGr programmation layer
-;; but enables a NumRow.
+;; Symbols layer
+;; + access to the Numbers layer
 
 (deflayer symbols
   XX

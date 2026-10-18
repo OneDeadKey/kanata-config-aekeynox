@@ -375,9 +375,10 @@ Colemak-DH, Sturdy… They’re optimized for English, and don't add any non-ASC
 character. These ASCII layouts can be emulated seamlessly, as long as QWERTY is
 selected as the host layout in the dedicated section.
 
-Emulating non-ASCII layouts is still experimental. Currently, two alternative
-layouts can be emulated over AZERTY: Ergo-L and QWERTY-Lafayette. Make sure
-AZERTY is properly selected as the host layout.
+Emulating non-ASCII layouts comes with a few limitations: some symbols and dead
+keys may be missing, and AltGr layers are not supported.
+Currently, two alternative layouts can be emulated over AZERTY: Ergo-L and
+QWERTY-Lafayette. Make sure AZERTY is properly selected as the host layout.
 
 Creating a layout file for other ASCII layouts should be straightforward, but
 emulating non-ASCII layouts is trickier. Again, pull requests are welcome,
