@@ -379,6 +379,8 @@ Emulating non-ASCII layouts comes with a few limitations: some symbols and dead
 keys may be missing, and AltGr layers are not supported.
 Currently, two alternative layouts can be emulated over AZERTY: Ergo-L and
 QWERTY-Lafayette. Make sure AZERTY is properly selected as the host layout.
+You will probably want to enable thumb taps so the symbols layer works as
+expected on AltGr.
 
 Creating a layout file for other ASCII layouts should be straightforward, but
 emulating non-ASCII layouts is trickier. Again, pull requests are welcome,
