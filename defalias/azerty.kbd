@@ -1,5 +1,6 @@
-;; Azerty aliases
-;; Works with AZERTY-fr. Needs a couple tweaks for the Belgian and Mac variants.
+;; AZERTY-fr aliases
+;; Works with the default AZERTY-fr on Windows, macOS and Linux.
+;; The AFNOR, OSS and Belgian variants would require a few tweaks.
 
 ;; Navigation layer
 (platform (macos) (defalias
