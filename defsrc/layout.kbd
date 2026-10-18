@@ -2,11 +2,11 @@
 
 (defsrc
   esc
-  1    2    3    4    5  bspc   6    7    8    9    0    -    =
-  q    w    e    r    t  rtop   y    u    i    o    p    [    ]
-  a    s    d    f    g  rmid   h    j    k    l    ;    '
-  z    x    c    v    b  lbot   n    m    ,    .    /
-        LeftThumb         spc        RightThumb
+  1    2    3    4    5   bspc   6    7    8    9    0    -    =
+  q    w    e    r    t   ret    y    u    i    o    p    [    ]
+  a    s    d    f    g    \     h    j    k    l    ;    '
+  z    x    c    v    b   lbot   n    m    ,    .    /
+        LeftThumb         spc         RightThumb
 )
 
 ;; vim: set ft=lisp:
