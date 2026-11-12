@@ -17,7 +17,7 @@
   cut C-x
   cpy C-w
   pst C-v
-  rdo C-y
+  rdo C-p
 ))
 (defalias
   cls C-t
