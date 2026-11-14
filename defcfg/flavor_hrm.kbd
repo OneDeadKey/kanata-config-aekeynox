@@ -15,9 +15,11 @@
   ;; Main mod-tap: Nav layer when held, Space when tapped.
   nav (tap-hold $QUICK_TAP $TAPPING_TERM spc (layer-while-held navigation))
 
-  ;; Space-cadet thumb keys: Shift/BackSpace, AltGr/Enter.
-  ;; Acts as a modifier by default, or as BackSpace/Enter when tapped separately.
+  ;; Space-cadet thumb keys: Shift/BackSpace (Shift/Del on Nav layers),
+  ;; AltGr/Enter. Acts as a modifier by default, or as BackSpace/Del/Enter when
+  ;; tapped separately.
   mod (tap-hold-press $QUICK_TAP $HOLDING_TERM bspc lsft)
+  del (tap-hold-press $QUICK_TAP $HOLDING_TERM del lsft)
   sym (tap-hold-press $QUICK_TAP $HOLDING_TERM ret (layer-while-held symbols))
 )
 
