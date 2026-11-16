@@ -12,7 +12,7 @@
   tab  home up   end  pgup   @v-    @/   @7   @8   @9   @lck @b-  @b+
   @all lft  down rght pgdn   @v0    @-   @4   @5   @6   @0   _
   @ndo @cut @cpy @pst S-tab   _     @,   @1   @2   @3   @.
-            del               _               @fun
+            @del              _               @fun
 )
 
 ;; vim: set ft=lisp:

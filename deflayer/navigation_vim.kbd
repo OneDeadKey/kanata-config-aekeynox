@@ -12,7 +12,7 @@
   XX   @cls bck  fwd  XX    @v-   home pgdn pgup end  @lck @b-  @b+
   @all @sav S-tab tab XX    @v0   lft  down up   rght XX   _
   @ndo @cut @cpy @pst @rdo   _    @mwl @mwd @mwu @mwr XX
-            del              _              @fun
+            @del             _              @fun
 )
 
 ;; Mouse wheel emulation

@@ -7,6 +7,7 @@
 (defalias
   nav _
   mod _
+  del _
   sym _
 )
 
