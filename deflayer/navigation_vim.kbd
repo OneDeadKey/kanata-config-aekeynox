@@ -9,14 +9,24 @@
 (deflayer navigation
   lrld
   f1   f2   f3   f4   f5    @v+   f6   f7   f8   f9   f10  f11  f12
-  XX   @cls bck  fwd  XX    @v-   home pgdn pgup end  @lck @b-  @b+
+  XX   @cls @bck @fwd XX    @v-   home pgdn pgup end  @lck @b-  @b+
   @all @sav S-tab tab XX    @v0   lft  down up   rght XX   _
   @ndo @cut @cpy @pst @rdo   _    @mwl @mwd @mwu @mwr XX
             del              _              @fun
 )
 
-;; Mouse wheel emulation
+(platform (linux) (defvar APP_SWITCHER_MODS (lmet lalt)))
+(platform (macos) (defvar APP_SWITCHER_MODS (lmet)))
+(platform (win winiov2 wintercept) (defvar APP_SWITCHER_MODS ()))
+
 (defalias
+  ;; Back and Forward navigation keys morph to (Shift)-Backtick when certain
+  ;; modifiers are held (Super or Alt on Linux, Cmd on macOS; no effect on
+  ;; Windows). This allows same app window switching in most Linux desktop
+  ;; environments and in macOS.
+  bck (fork bck (multi lsft @`) $APP_SWITCHER_MODS)
+  fwd (fork fwd @` $APP_SWITCHER_MODS)
+  ;; Mouse wheel emulation
   mwu (mwheel-up    50 120)
   mwd (mwheel-down  50 120)
   mwl (mwheel-left  50 120)
