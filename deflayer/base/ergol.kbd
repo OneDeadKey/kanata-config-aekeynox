@@ -3,7 +3,7 @@
   _
  @n1  @n2  @n3  @n4  @n5  bspc  @n6  @n7  @n8  @n9  @n0  @s/  @s=
   a    c    o    p    z   ret    j    ;    d   @odk  y   @s[  @s]
-  q   @s   @e   @n    f   @s\    l   @r   @t   @i    u   @s'
+ @q   @s   @e   @n    f   @s\    l   @r   @t   @i   @u   @s'
   w    x   @s-   v    b   lbot  @s.   h    g   @s,   k
                 @mod      @nav       @sym
 )
@@ -20,12 +20,14 @@
 
 ;; home row mods
 (defalias
+  q (t! hrm_lil_l  q)
   s (t! hrm_ring   s)
   e (t! hrm_middle e)
   n (t! hrm_index  n)
   r (t! hrm_index  r)
   t (t! hrm_middle t)
   i (t! hrm_ring   i)
+  u (t! hrm_lil_r  u)
 )
 
 ;; Shifted Keys
