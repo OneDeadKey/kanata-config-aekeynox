@@ -3,6 +3,8 @@
 (deftemplate hrm_ring   (key) $key)
 (deftemplate hrm_middle (key) $key)
 (deftemplate hrm_index  (key) $key)
+(deftemplate hrm_lil_l  (key) $key)
+(deftemplate hrm_lil_r  (key) $key)
 
 (defalias
   nav _

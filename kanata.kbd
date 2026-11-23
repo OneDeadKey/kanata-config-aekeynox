@@ -57,10 +57,13 @@
 ;;  - `HRM`: thumb-taps + home row mods
 ;;    - the left thumb key becomes Shift
 ;;    - SDF/JKL become Meta/Ctrl/Alt when held
+;;  - `HRM Full`: `HRM` + home row mods for Shift on the little finger home row keys
+;;    - `A` and `;` become Left Shift and Right Shift respectively when held
 
-(include defcfg/flavor_ez.kbd)    ;; standard keyboard behavior
-;; (include defcfg/flavor_tt.kbd)    ;; thumb taps
-;; (include defcfg/flavor_hrm.kbd)   ;; thumb taps + home row mods
+(include defcfg/flavor_ez.kbd)       ;; standard keyboard behavior
+;; (include defcfg/flavor_tt.kbd)       ;; thumb taps
+;; (include defcfg/flavor_hrm.kbd)      ;; thumb taps + home row mods
+;; (include defcfg/flavor_hrm_full.kbd) ;; thumb taps + home row mods including Shift
 
 
 ;;-----------------------------------------------------------------------------

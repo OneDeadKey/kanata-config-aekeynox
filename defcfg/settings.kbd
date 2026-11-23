@@ -36,11 +36,15 @@
   HM1 lctl  ;; Control  (index)
   HM2 lmet  ;; Command  (middle)
   HM3 lalt  ;; Option   (ring)
+  HM4L lsft ;; Shift L  (little left)
+  HM4R rsft ;; Shift R  (little right)
 ))
 (platform (linux win winiov2 wintercept) (defvar
   HM1 lalt  ;; Alt      (index)
   HM2 lctl  ;; Control  (middle)
   HM3 lmet  ;; Meta     (ring)
+  HM4L lsft ;; Shift L  (little left)
+  HM4R rsft ;; Shift R  (little right)
 ))
 
 ;; vim: set ft=lisp:

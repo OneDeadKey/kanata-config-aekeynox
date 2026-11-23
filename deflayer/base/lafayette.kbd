@@ -2,8 +2,8 @@
 (deflayer base
   _
  @n1  @n2  @n3  @n4  @n5  bspc  @n6  @n7  @n8  @n9  @n0  @s-  @s=
-  a    z    e    r    t   ret    y    u    i   o     p   @s[  @s]
-  q   @s   @d   @f    g   @s\    h   @j   @k   @l   @odk @s'
+  a    z    e    r    t   ret    y    u    i    o    p   @s[  @s]
+ @q   @s   @d   @f    g   @s\    h   @j   @k   @l   @odk @s'
   w    x    c    v    b   lbot   n    ;   @s,  @s.  @s/
                 @mod      @nav       @sym
 )
@@ -20,6 +20,7 @@
 
 ;; home row mods
 (defalias
+  q (t! hrm_lil_l  q)
   s (t! hrm_ring   s)
   d (t! hrm_middle d)
   f (t! hrm_index  f)
