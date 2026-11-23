@@ -26,17 +26,17 @@
 )
 
 (platform (macos) (defalias
-  prtsc M-C-S-3
+  prtsc (tap-hold $QUICK_TAP $TAPPING_TERM M-C-S-3 lsft)
   b+    brup
   b-    brdown
 ))
 (platform (linux) (defalias
-  prtsc prtsc
+  prtsc (tap-hold $QUICK_TAP $TAPPING_TERM prtsc lsft)
   b+    brup
   b-    brdown
 ))
 (platform (win winiov2 wintercept) (defalias
-  prtsc prtsc
+  prtsc (tap-hold $QUICK_TAP $TAPPING_TERM prtsc lsft)
   b+    XX ;; see https://github.com/jtroo/kanata/issues/2214
   b-    XX
 ))
